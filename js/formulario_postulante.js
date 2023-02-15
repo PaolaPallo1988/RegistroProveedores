@@ -270,7 +270,6 @@ function mostrar(dato) {
 		document.getElementById("distribuidor_postulante1").checked = false;
 		document.getElementById("distribuidor_postulante2").checked = false;
 	}
-
 }
 
 
@@ -887,18 +886,17 @@ const vigenciaLegal = () => {
 	//PARA UNIR LA FECHA COMPLETA CON LAS SEPARACIONES
 	var anoActual = Factual.getFullYear();
 
-
-	if (anoLegal >= anoActual) {
-		if (mesLegal > mesActual) {
-			document.getElementById("nombre_legal").removeAttribute("disabled", "");
-			document.getElementById("pais_legal").removeAttribute("disabled", "");
-			document.getElementById("direccion_legal").removeAttribute("disabled", "");
-			document.getElementById("ciudad_legal").removeAttribute("disabled", "");
-			document.getElementById("telefono_legal").removeAttribute("disabled", "");
-			document.getElementById("correo_legal").removeAttribute("disabled", "");
-			document.getElementById("vigencia_legal").focus();
-		} else {
-			if (mesLegal === mesActual) {
+	if (anoLegal > anoActual) {
+		document.getElementById("nombre_legal").removeAttribute("disabled", "");
+		document.getElementById("pais_legal").removeAttribute("disabled", "");
+		document.getElementById("direccion_legal").removeAttribute("disabled", "");
+		document.getElementById("ciudad_legal").removeAttribute("disabled", "");
+		document.getElementById("telefono_legal").removeAttribute("disabled", "");
+		document.getElementById("correo_legal").removeAttribute("disabled", "");
+		document.getElementById("vigencia_legal").focus();
+	} else {
+		if (anoLegal == anoActual) {
+			if (mesLegal == mesActual) {
 				if (diaLegal > diaActual) {
 					document.getElementById("nombre_legal").removeAttribute("disabled", "");
 					document.getElementById("pais_legal").removeAttribute("disabled", "");
@@ -909,7 +907,7 @@ const vigenciaLegal = () => {
 					document.getElementById("vigencia_legal").focus();
 				} else {
 					swal({
-						title: "Datos de Representante Legal",
+						title: "Datos de Representante Legal ",
 						text: "La vigencia del nombramiento esta CADUCADA",
 						icon: "warning",
 						dangerMode: true,
@@ -924,39 +922,51 @@ const vigenciaLegal = () => {
 					document.getElementById("vigencia_legal").focus();
 				}
 			} else {
-				swal({
-					title: "Datos de Representante ",
-					text: "La vigencia del nombramiento esta CADUCADA",
-					icon: "warning",
-					dangerMode: true,
-				});
-				document.getElementById("nombre_legal").setAttribute("disabled", "");
-				document.getElementById("pais_legal").setAttribute("disabled", "");
-				document.getElementById("direccion_legal").setAttribute("disabled", "");
-				document.getElementById("ciudad_legal").setAttribute("disabled", "");
-				document.getElementById("telefono_legal").setAttribute("disabled", "");
-				document.getElementById("correo_legal").setAttribute("disabled", "");
-				document.getElementById("vigencia_legal").value = "";
-				document.getElementById("vigencia_legal").focus();
+				if (mesLegal > mesActual) {
+					document.getElementById("nombre_legal").removeAttribute("disabled", "");
+					document.getElementById("pais_legal").removeAttribute("disabled", "");
+					document.getElementById("direccion_legal").removeAttribute("disabled", "");
+					document.getElementById("ciudad_legal").removeAttribute("disabled", "");
+					document.getElementById("telefono_legal").removeAttribute("disabled", "");
+					document.getElementById("correo_legal").removeAttribute("disabled", "");
+					document.getElementById("vigencia_legal").focus();
+				} else {
+					swal({
+						title: "Datos de Representante Legal ",
+						text: "La vigencia del nombramiento esta CADUCADA",
+						icon: "warning",
+						dangerMode: true,
+					});
+					document.getElementById("nombre_legal").setAttribute("disabled", "");
+					document.getElementById("pais_legal").setAttribute("disabled", "");
+					document.getElementById("direccion_legal").setAttribute("disabled", "");
+					document.getElementById("ciudad_legal").setAttribute("disabled", "");
+					document.getElementById("telefono_legal").setAttribute("disabled", "");
+					document.getElementById("correo_legal").setAttribute("disabled", "");
+					document.getElementById("vigencia_legal").value = "";
+					document.getElementById("vigencia_legal").focus();
+				}
 			}
+		} else {
+			swal({
+				title: "Datos de Representante Legal ",
+				text: "La vigencia del nombramiento esta CADUCADA",
+				icon: "warning",
+				dangerMode: true,
+			});
+			document.getElementById("nombre_legal").setAttribute("disabled", "");
+			document.getElementById("pais_legal").setAttribute("disabled", "");
+			document.getElementById("direccion_legal").setAttribute("disabled", "");
+			document.getElementById("ciudad_legal").setAttribute("disabled", "");
+			document.getElementById("telefono_legal").setAttribute("disabled", "");
+			document.getElementById("correo_legal").setAttribute("disabled", "");
+			document.getElementById("vigencia_legal").value = "";
+			document.getElementById("vigencia_legal").focus();
 		}
-	} else {
-		swal({
-			title: "Datos de Representante Legal",
-			text: "La vigencia del nombramiento esta CADUCADA",
-			icon: "warning",
-			dangerMode: true,
-		});
-		document.getElementById("nombre_legal").setAttribute("disabled", "");
-		document.getElementById("pais_legal").setAttribute("disabled", "");
-		document.getElementById("direccion_legal").setAttribute("disabled", "");
-		document.getElementById("ciudad_legal").setAttribute("disabled", "");
-		document.getElementById("telefono_legal").setAttribute("disabled", "");
-		document.getElementById("correo_legal").setAttribute("disabled", "");
-		document.getElementById("vigencia_legal").value = "";
-		document.getElementById("vigencia_legal").focus();
 	}
 }
+
+
 
 
 
@@ -985,16 +995,18 @@ function vigenciaApoderado() {
 	//PARA UNIR LA FECHA COMPLETA CON LAS SEPARACIONES
 	//var FactualF = dia + "/" + mes + "/" + Factual.getFullYear();
 
-	if (anoLegal >= anoActual) {
-		if (mesLegal > mesActual) {
-			document.getElementById("nombre_apoderado").removeAttribute("disabled", "");
-			document.getElementById("direccion_apoderado").removeAttribute("disabled", "");
-			document.getElementById("ciudad_apoderado").removeAttribute("disabled", "");
-			document.getElementById("telefono_apoderado").removeAttribute("disabled", "");
-			document.getElementById("correo_apoderado").removeAttribute("disabled", "");
-			document.getElementById("vigencia_apoderado").focus();
-		} else {
-			if (mesLegal === mesActual) {
+
+
+	if (anoLegal > anoActual) {
+		document.getElementById("nombre_apoderado").removeAttribute("disabled", "");
+		document.getElementById("direccion_apoderado").removeAttribute("disabled", "");
+		document.getElementById("ciudad_apoderado").removeAttribute("disabled", "");
+		document.getElementById("telefono_apoderado").removeAttribute("disabled", "");
+		document.getElementById("correo_apoderado").removeAttribute("disabled", "");
+		document.getElementById("vigencia_apoderado").focus();
+	} else {
+		if (anoLegal == anoActual) {
+			if (mesLegal == mesActual) {
 				if (diaLegal > diaActual) {
 					document.getElementById("nombre_apoderado").removeAttribute("disabled", "");
 					document.getElementById("direccion_apoderado").removeAttribute("disabled", "");
@@ -1017,34 +1029,64 @@ function vigenciaApoderado() {
 					document.getElementById("vigencia_apoderado").value = "";
 				}
 			} else {
-				swal({
-					title: "Datos del Apoderado",
-					text: "La vigencia del nombramiento esta CADUCADA",
-					icon: "warning",
-					dangerMode: true,
-				});
-				document.getElementById("nombre_apoderado").setAttribute("disabled", "");
-				document.getElementById("direccion_apoderado").setAttribute("disabled", "");
-				document.getElementById("ciudad_apoderado").setAttribute("disabled", "");
-				document.getElementById("correo_apoderado").setAttribute("disabled", "");
-				document.getElementById("vigencia_apoderado").focus();
-				document.getElementById("vigencia_apoderado").value = "";
+				if (mesLegal > mesActual) {
+					document.getElementById("nombre_apoderado").removeAttribute("disabled", "");
+					document.getElementById("direccion_apoderado").removeAttribute("disabled", "");
+					document.getElementById("ciudad_apoderado").removeAttribute("disabled", "");
+					document.getElementById("telefono_apoderado").removeAttribute("disabled", "");
+					document.getElementById("correo_apoderado").removeAttribute("disabled", "");
+					document.getElementById("vigencia_apoderado").focus();
+				} else {
+					swal({
+						title: "Datos del Apoderado",
+						text: "La vigencia del nombramiento esta CADUCADA",
+						icon: "warning",
+						dangerMode: true,
+					});
+					document.getElementById("nombre_apoderado").setAttribute("disabled", "");
+					document.getElementById("direccion_apoderado").setAttribute("disabled", "");
+					document.getElementById("ciudad_apoderado").setAttribute("disabled", "");
+					document.getElementById("correo_apoderado").setAttribute("disabled", "");
+					document.getElementById("vigencia_apoderado").focus();
+					document.getElementById("vigencia_apoderado").value = "";
+				}
 			}
+		} else {
+			swal({
+				title: "Datos del Apoderado",
+				text: "La vigencia del nombramiento esta CADUCADA",
+				icon: "warning",
+				dangerMode: true,
+			});
+			document.getElementById("nombre_apoderado").setAttribute("disabled", "");
+			document.getElementById("direccion_apoderado").setAttribute("disabled", "");
+			document.getElementById("ciudad_apoderado").setAttribute("disabled", "");
+			document.getElementById("correo_apoderado").setAttribute("disabled", "");
+			document.getElementById("vigencia_apoderado").focus();
+			document.getElementById("vigencia_apoderado").value = "";
 		}
-	} else {
-		swal({
-			title: "Datos del Apoderado",
-			text: "La vigencia del nombramiento esta CADUCADA",
-			icon: "warning",
-			dangerMode: true,
-		});
-		document.getElementById("nombre_apoderado").setAttribute("disabled", "");
-		document.getElementById("direccion_apoderado").setAttribute("disabled", "");
-		document.getElementById("ciudad_apoderado").setAttribute("disabled", "");
-		document.getElementById("correo_apoderado").setAttribute("disabled", "");
-		document.getElementById("vigencia_apoderado").focus();
-		document.getElementById("vigencia_apoderado").value = "";
 	}
+}
+
+
+
+const mensajeError = () => {
+
+	var archivo = document.getElementById("archivo").value;
+	var archivo1 = document.getElementById("archivo1").value;
+	var archivo2 = document.getElementById("archivo2").value;
+	var archivo3 = document.getElementById("archivo3").value;
+	var archivo4 = document.getElementById("archivo4").value;
+	var archivo5 = document.getElementById("archivo5").value;
+	var archivo6 = document.getElementById("archivo6").value;
+
+	let mensaje ='';
+
+	if(archivo=""){
+		console.log("VACIO");
+		
+	}
+
 }
 
 

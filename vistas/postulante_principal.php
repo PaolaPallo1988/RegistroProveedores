@@ -844,21 +844,25 @@ $row = mysqli_fetch_array($result);
                                                     1.1 Solicitud de calificación de bienes estratégicos y/o prestación de servicios conexos. En el caso de persona jurídica nacional o extranjera la solicitud deberá estar
                                                     firmada por quien ejerza la representación legal o apoderado del fabricante y/o distribuidor autorizado;</div>
                                                 <input class="fancy-file" accept="application/pdf" type="file" name="archivo" id="archivo" required><br>
+                                                <span id="archivo-error"></span>
                                             </div>
                                             <div class='col-sm-12'>
                                                 <div class="alert alert-primary">1.2 Formulario de datos generales del proveedor y de los bienes y servicios que estén en capacidad de proveer;</div>
                                                 <input class="fancy-file" placeholder='Documentos Generales' accept="application/pdf" type="file" name="archivo1" id="archivo1" required><br>
+                                                <span id="archivo1-error"></span>
                                             </div>
                                             <div class='col-sm-12'>
                                                 <div class="alert alert-primary"> 1.3 El proveedor (fabricante o distribuidor) de bienes estratégicos y/o prestación de servicios conexos, presentará los documentos que acrediten la capacidad y experiencia en su fabricación, distribución y/o comercialización.
                                                     Para la capacidad presentará certificaciones MILlTARY STANDARD: (MIL STD), Standardization Agreement (STANAG), ISO, etc. u otros documentos del bien y/o prestación de! servicio conexo de acuerdo a la naturaleza del
                                                     bien ofertado. Para la experiencia presentará documentos respecto de la comercialización y/o certificaciones emitidas por los clientes a quienes ha proveído. El distribuidor, además, presentará una carta de autorización como distribuidor;</div>
                                                 <input class="fancy-file" placeholder='Documentos Generales' accept="application/pdf" type="file" name="archivo2" id="archivo2" required><br>
+                                                <span id="archivo2-error"></span>
                                             </div>
                                             <div class='col-sm-12'>
                                                 <div class="alert alert-primary">1.4 El distribuidor nacional o extranjero que por su reciente creación o autorización de distribución (no mayor a 1 año), no pueda presentar los documentos que acrediten su capacidad y experiencia,
                                                     podrá presentar los documentos del fabricante del bien y/o servicio conexo que oferta;</div>
                                                 <input class="fancy-file" placeholder='Documentos Generales' accept="application/pdf" type="file" name="archivo3" id="archivo3" required><br>
+                                                <span id="archivo3-error"></span>
                                             </div>
                                             <div class='col-sm-12'>
                                                 <div class="alert alert-primary"> 1.5 Declaración juramentada otorgada ante Notario Público, a través de la cual la persona natural o el representante legal de la persona jurídica nacional o extranjera establezca:<br>
@@ -867,14 +871,17 @@ $row = mysqli_fetch_array($result);
                                                     1.5.2Acuerdo de responsabilidad del compromiso de confidencialidad y reserva de información; y,<br>
                                                     1.5.3 Declaración de que toda la documentación presentada es auténtica y fidedigna.</div>
                                                 <input class="fancy-file" placeholder='Documentos Generales' accept="application/pdf" type="file" name="archivo4" id="archivo4" required><br>
+                                                <span id="archivo4-error"></span>
                                             </div>
                                             <div class='col-sm-12'>
                                                 <div class="alert alert-primary"> 1.6 Estados de situación financiera del año inmediato anterior que muestre indicadores de la situación económica, de la persona natural o jurídica, nacional o extrajera que actúen como fabricante y/o distribuidor autorizado;</div>
                                                 <input class="fancy-file" placeholder='Documentos Generales' accept="application/pdf" type="file" name="archivo5" id="archivo5" required><br>
+                                                <span id="archivo5-error"></span>
                                             </div>
                                             <div class='col-sm-12'>
                                                 <div class="alert alert-primary"> 1.7 Poder para realizar los trámites administrativos y legales como apoderado o simplemente para el proceso de calificación de la persona natural o jurídica, nacional o extranjera.</div>
                                                 <input class="fancy-file" placeholder='Documentos Generales' accept="application/pdf" type="file" name="archivo6" id="archivo6" required></br>
+                                                <span id="archivo6-error"></span>
                                             </div>
                                         </div>
                                     </div>
