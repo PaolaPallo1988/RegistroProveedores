@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/estilos.css" />
+    <link rel="stylesheet" href="fancy-file/styles.css" />
+
+    <title>Input Files</title>
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data" action="#">
+        <h2>Alta de usuarios</h2>
+        <div>
+            <span>Usuario</span>
+            <input autocomplete="off" type="text" name="usuario" required />
+        </div>
+        <div>
+            <span>Clave</span>
+            <input type="password" name="clave" required />
+        </div>
+        <div>
+            <span>Avatar</span>
+            <input type="file" class='fancy-file' id="archivo" name="avatar" accept="image/*" data-button="Examinar" data-empty="Sin archivos" multiple />
+        </div>
+
+        <div>
+            <span>Avatar</span>
+            <input type="file" class='fancy-file red' id="archivo2" name="avatar" accept="image/*" multiple />
+        </div>
+        <div>
+            <span>Avatar</span>
+            <input type="file" class='fancy-file green' id="archivo3" name="avatar" accept="image/*" multiple />
+        </div>
+        <input type="submit" value="Enviar" />
+    </form>
+    <script src="fancy-file/script.js"></script>
+</body>
+
+</html>

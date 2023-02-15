@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Formulario de contacto | Devlaz</title>
+	<link rel="shortcut icon" type="image/png" href="favicon.png" />
+	<link rel="stylesheet" href="style.css" type="text/css" media="all" />	
+</head>
+<body>
+<header>
+	<div class="flex">
+		<a href="https://devlaz.com"><div class="logo"></div></a>		
+	</div>
+</header>
+
+<main>
+	<label>Solo numeros:</label>
+	<input type="text"  value="" onkeyup="this.value=Numeros(this.value)" />	
+	<br><br>
+	<label>Solo letras y numeros:</label>
+	<input type="text"  value="" onkeyup="this.value=NumText(this.value)" />
+	<br><br>
+	<label>Reemplazar espacios:</label>
+	<input id="text1" type="text"  value="" onkeyup="this.value=Espacios(this.value)" />
+	<br><br>
+	<label>Convertir a mayusculas:</label>
+	<input type="text"  value="" onkeyup="this.value=Mayuculas(this.value)" />
+	<br><br>
+	
+	<!-- Se limitan los caracteres maximos con maxlength -->
+	<!-- event: datos del evento, utilizado para leer codigo de tecla precionada -->
+	<!-- this: identificador el input -->
+	<label>Tarjeta de credito:</label>
+	<input type="text"  value="" maxlength="19" onkeyup="Card(event, this)" />
+	
+</main>
+
+<footer>
+<div class="flex">
+	© Devlaz 2017. Todos los derechos reservados.
+	<b style="float: right;">MALI</b>
+</div>
+<br>
+</footer>	
+	<script src="main.js"></script>
+</body>
+</html>
