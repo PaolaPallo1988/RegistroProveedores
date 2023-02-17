@@ -224,7 +224,7 @@ $row = mysqli_fetch_array($result);
                                                 <label class="formulario__label">TIPO DE RAZÓN SOCIAL * </label>
                                                 <div class="form-group">
                                                     <div class='input-group date'>
-                                                        <select class="formulario__input" name="razonsoc_postulante" id="razonsoc_postulante"  onclick="validarAdjuntos()"  onchange="mostrarform(this.value);" required>
+                                                        <select class="formulario__input" name="razonsoc_postulante" id="razonsoc_postulante" onclick="validarAdjuntos()" onchange="mostrarform(this.value);" required>
                                                             <option value="">SELECCIONAR... </option>
                                                             <?php
                                                             include("../conexion/conexion.php");
@@ -625,9 +625,9 @@ $row = mysqli_fetch_array($result);
                                 <div id="posee_apoderado" class="container p-2 my-2 " style="display:none;">
                                     <div class="radio">
                                         <font size=5 style="color:black"> DISPONE DE APODERADO ? </font>
-                                        <input type="radio" name="opcion_apoderado" id="opcion_apoderadoSi" value="SI"  onchange="postulante(this.value);" required>
+                                        <input type="radio" name="opcion_apoderado" id="opcion_apoderadoSi" value="SI" onchange="postulante(this.value);" required>
                                         <label for="opcion_apoderadoSi"> SI </label>
-                                        <input type="radio" name="opcion_apoderado" id="opcion_apoderadoNo" value="NO"  onchange="postulante(this.value);" required>
+                                        <input type="radio" name="opcion_apoderado" id="opcion_apoderadoNo" value="NO" onchange="postulante(this.value);" required>
                                         <label for="opcion_apoderadoNo"> NO </label>
                                     </div>
                                 </div>
@@ -660,7 +660,7 @@ $row = mysqli_fetch_array($result);
                                                     <label class="formulario__label"> NOMBRES Y APELLIDOS * </label>
                                                     <div class="form-group">
                                                         <div class='input-group date'>
-                                                            <input type='text' class="formulario__input" name="nombre_apoderado" id="nombre_apoderado" onkeypress="return soloLetras(event)" onkeyup="javascript:this.value=this.value.toUpperCase();"  />
+                                                            <input type='text' class="formulario__input" name="nombre_apoderado" id="nombre_apoderado" onkeypress="return soloLetras(event)" onkeyup="javascript:this.value=this.value.toUpperCase();" />
                                                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                                         </div>
                                                         <p class="formulario__input-error"> Digite dos nombres y dos apellidos</p>
@@ -670,7 +670,7 @@ $row = mysqli_fetch_array($result);
                                                     <label class="formulario__label"> VIGENCIA * </label>
                                                     <div class="form-group">
                                                         <div class='input-group date'>
-                                                            <input type="text" class="formulario__input" id="vigencia_apoderado" name="vigencia_apoderado"  placeholder='DD/MM/AAAA' onchange="vigenciaApoderado()"  onkeyup="fecha(event, this)" maxlength="10" >
+                                                            <input type="text" class="formulario__input" id="vigencia_apoderado" name="vigencia_apoderado" placeholder='DD/MM/AAAA' onchange="vigenciaApoderado()" onkeyup="fecha(event, this)" maxlength="10">
                                                             <!--<input type="date" class="formulario__input" id="vigencia_apoderado" name="vigencia_apoderado" min="01-01-2018" max="31-12-2025" required>-->
                                                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                                         </div>
@@ -696,7 +696,7 @@ $row = mysqli_fetch_array($result);
                                                     <label class="formulario__label"> CIUDAD * </label>
                                                     <div class="form-group">
                                                         <div class='input-group date'>
-                                                            <input type='text' class="formulario__input" name="ciudad_apoderado" id="ciudad_apoderado" onkeypress="return soloLetras(event)" onkeyup="javascript:this.value=this.value.toUpperCase();"/>
+                                                            <input type='text' class="formulario__input" name="ciudad_apoderado" id="ciudad_apoderado" onkeypress="return soloLetras(event)" onkeyup="javascript:this.value=this.value.toUpperCase();" />
                                                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                                             <!--<span class="input-group-addon">
                                                             <span class="fas fa-building"></span>
@@ -711,7 +711,7 @@ $row = mysqli_fetch_array($result);
                                                     <label class="formulario__label"> TELÉFONO FIJO O MOVIL * </label>
                                                     <div class="form-group">
                                                         <div class='input-group date'>
-                                                            <input type='text' class="formulario__input" name="telefono_apoderado" id="telefono_apoderado" onkeypress="return numeros(event)" maxlength="13"  />
+                                                            <input type='text' class="formulario__input" name="telefono_apoderado" id="telefono_apoderado" onkeypress="return numeros(event)" maxlength="13" />
                                                             <i class="formulario__validacion-estado fas fa-times-circle"></i>
                                                             <!--<span class="input-group-addon">
                                                                     <span class="fas fa-phone"></span>
@@ -839,49 +839,56 @@ $row = mysqli_fetch_array($result);
                                             <img src="../images/aviso.png" class="img-thumbnail" alt="Cinque Terre" width="100%" height="500">
                                         </div>
                                         <div class="x_content">
-                                            <div class='col-sm-12'>
-                                                <div class="alert alert-primary">
-                                                    1.1 Solicitud de calificación de bienes estratégicos y/o prestación de servicios conexos. En el caso de persona jurídica nacional o extranjera la solicitud deberá estar
-                                                    firmada por quien ejerza la representación legal o apoderado del fabricante y/o distribuidor autorizado;</div>
-                                                <input class="fancy-file" accept="application/pdf" type="file" name="archivo" id="archivo" required><br>
-                                                <span id="archivo-error"></span>
+                                            <div>
+                                                <div class='col-sm-12'>
+                                                    <div class="alert alert-primary">1.1 Solicitud de calificación de bienes estratégicos y/o prestación de servicios conexos. En el caso de persona jurídica nacional o extranjera la solicitud deberá estar
+                                                        firmada por quien ejerza la representación legal o apoderado del fabricante y/o distribuidor autorizado;</div>
+                                                    <i id="errorI" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="archivo-error"></span></i>
+                                                    <input class="fancy-file" accept="application/pdf" type="file" name="archivo" id="archivo" required>
+                                                </div>
                                             </div>
                                             <div class='col-sm-12'>
+                                                <br>
                                                 <div class="alert alert-primary">1.2 Formulario de datos generales del proveedor y de los bienes y servicios que estén en capacidad de proveer;</div>
-                                                <input class="fancy-file" placeholder='Documentos Generales' accept="application/pdf" type="file" name="archivo1" id="archivo1" required><br>
-                                                <span id="archivo1-error"></span>
+                                                <i id="error1" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="archivo1-error"></span></i>
+                                                <input class="fancy-file" accept="application/pdf" type="file" name="archivo1" id="archivo1" required><br>
                                             </div>
                                             <div class='col-sm-12'>
+                                                <br>
                                                 <div class="alert alert-primary"> 1.3 El proveedor (fabricante o distribuidor) de bienes estratégicos y/o prestación de servicios conexos, presentará los documentos que acrediten la capacidad y experiencia en su fabricación, distribución y/o comercialización.
                                                     Para la capacidad presentará certificaciones MILlTARY STANDARD: (MIL STD), Standardization Agreement (STANAG), ISO, etc. u otros documentos del bien y/o prestación de! servicio conexo de acuerdo a la naturaleza del
                                                     bien ofertado. Para la experiencia presentará documentos respecto de la comercialización y/o certificaciones emitidas por los clientes a quienes ha proveído. El distribuidor, además, presentará una carta de autorización como distribuidor;</div>
-                                                <input class="fancy-file" placeholder='Documentos Generales' accept="application/pdf" type="file" name="archivo2" id="archivo2" required><br>
-                                                <span id="archivo2-error"></span>
+                                                    <i id="error2" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="archivo2-error"></span></i>
+                                                    <input class="fancy-file" accept="application/pdf" type="file" name="archivo2" id="archivo2" required><br>
                                             </div>
                                             <div class='col-sm-12'>
+                                                <br>
                                                 <div class="alert alert-primary">1.4 El distribuidor nacional o extranjero que por su reciente creación o autorización de distribución (no mayor a 1 año), no pueda presentar los documentos que acrediten su capacidad y experiencia,
                                                     podrá presentar los documentos del fabricante del bien y/o servicio conexo que oferta;</div>
-                                                <input class="fancy-file" placeholder='Documentos Generales' accept="application/pdf" type="file" name="archivo3" id="archivo3" required><br>
-                                                <span id="archivo3-error"></span>
+                                                    <i id="error3" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="archivo3-error"></span></i>
+                                                    <input class="fancy-file" accept="application/pdf" type="file" name="archivo3" id="archivo3" required><br>
                                             </div>
                                             <div class='col-sm-12'>
+                                                <br>
                                                 <div class="alert alert-primary"> 1.5 Declaración juramentada otorgada ante Notario Público, a través de la cual la persona natural o el representante legal de la persona jurídica nacional o extranjera establezca:<br>
                                                     1.5.1 El domicilio de la persona natural o jurídica, nacional o extranjera;
                                                     y de, su representante legal o apoderado;<br>
                                                     1.5.2Acuerdo de responsabilidad del compromiso de confidencialidad y reserva de información; y,<br>
                                                     1.5.3 Declaración de que toda la documentación presentada es auténtica y fidedigna.</div>
-                                                <input class="fancy-file" placeholder='Documentos Generales' accept="application/pdf" type="file" name="archivo4" id="archivo4" required><br>
-                                                <span id="archivo4-error"></span>
+                                                    <i id="error4" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="archivo4-error"></span></i>
+                                                    <input class="fancy-file" accept="application/pdf" type="file" name="archivo4" id="archivo4" required><br>
                                             </div>
                                             <div class='col-sm-12'>
+                                                <br>
                                                 <div class="alert alert-primary"> 1.6 Estados de situación financiera del año inmediato anterior que muestre indicadores de la situación económica, de la persona natural o jurídica, nacional o extrajera que actúen como fabricante y/o distribuidor autorizado;</div>
-                                                <input class="fancy-file" placeholder='Documentos Generales' accept="application/pdf" type="file" name="archivo5" id="archivo5" required><br>
-                                                <span id="archivo5-error"></span>
+                                                <i id="error5" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="archivo5-error"></span></i>
+                                                <input class="fancy-file" accept="application/pdf" type="file" name="archivo5" id="archivo5" required><br>
                                             </div>
                                             <div class='col-sm-12'>
+                                                <br>
                                                 <div class="alert alert-primary"> 1.7 Poder para realizar los trámites administrativos y legales como apoderado o simplemente para el proceso de calificación de la persona natural o jurídica, nacional o extranjera.</div>
-                                                <input class="fancy-file" placeholder='Documentos Generales' accept="application/pdf" type="file" name="archivo6" id="archivo6" required></br>
-                                                <span id="archivo6-error"></span>
+                                                <i id="error6" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="archivo6-error"></span></i>
+                                                <input class="fancy-file" accept="application/pdf" type="file" name="archivo6" id="archivo6" required></br>
                                             </div>
                                         </div>
                                     </div>
@@ -904,16 +911,22 @@ $row = mysqli_fetch_array($result);
                                             <div class="clearfix"></div>
                                             <div class="x_content">
                                                 <div class='col-sm-12'>
+                                                    <br>
                                                     <div class="alert alert-primary"> 2.1.1. Estar al día en las obligaciones tributarias con el Servicio de Rentas Internas (SRI); </div>
-                                                    <input class="fancy-file" placeholder='Documentos Específicos' accept="application/pdf" type="file" name="persona_natural1" id="persona_natural1"></br>
+                                                    <i id="natural1" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="natural1-error"></span></i>
+                                                    <input class="fancy-file" accept="application/pdf" type="file" name="persona_natural1" id="persona_natural1"></br>
                                                 </div>
                                                 <div class='col-sm-12'>
+                                                    <br>
                                                     <div class="alert alert-primary"> 2.1.2. Original o copia certificada del Registro Único de Contribuyentes (RUC); y,</div>
-                                                    <input class="fancy-file" placeholder='Documentos Específicos' accept="application/pdf" type="file" name="persona_natural2" id="persona_natural2"> </br>
+                                                    <i id="natural2" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="natural2-error"></span></i>
+                                                    <input class="fancy-file" accept="application/pdf" type="file" name="persona_natural2" id="persona_natural2"> </br>
                                                 </div>
                                                 <div class='col-sm-12'>
+                                                    <br>
                                                     <div class="alert alert-primary"> 2.1.3. Si es empleador, deberá estar al día en las obligaciones patronales en el Instituto Ecuatoriano de Seguridad Social (IESS);</div>
-                                                    <input class="fancy-file" placeholder='Documentos Específicos' accept="application/pdf" type="file" name="persona_natural3" id="persona_natural3"> </br>
+                                                    <i id="natural3" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="natural3-error"></span></i>
+                                                    <input class="fancy-file" accept="application/pdf" type="file" name="persona_natural3" id="persona_natural3"> </br>
                                                 </div>
                                             </div>
                                         </div>
@@ -927,28 +940,40 @@ $row = mysqli_fetch_array($result);
                                             <div class="clearfix"></div>
                                             <div class="x_content">
                                                 <div class='col-sm-12'>
+                                                    <br>
                                                     <div class="alert alert-primary"> 2.2.1. Original o copia certificada de las escrituras de constitución de la compañía, estatutos y sus reformas de ser el caso; </div>
-                                                    <input class="fancy-file" placeholder='Documentos Específicos' accept="application/pdf" type="file" name="persona_juridica1" id="persona_juridica1"></br>
+                                                    <i id="juridica1" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="juridica1-error"></span></i>
+                                                    <input class="fancy-file" accept="application/pdf" type="file" name="persona_juridica1" id="persona_juridica1"></br>
                                                 </div>
                                                 <div class='col-sm-12'>
+                                                    <br>
                                                     <div class="alert alert-primary"> 2.2.2. Original o copia certificada del nombramiento del representante legal, inscrito en el Registro Mercantil, vigente a la fecha de presentación;</div>
-                                                    <input class="fancy-file" placeholder='Documentos Específicos' accept="application/pdf" type="file" name="persona_juridica2" id="persona_juridica2"> </br>
+                                                    <i id="juridica2" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="juridica2-error"></span></i>
+                                                    <input class="fancy-file" accept="application/pdf" type="file" name="persona_juridica2" id="persona_juridica2"> </br>
                                                 </div>
                                                 <div class='col-sm-12'>
+                                                    <br>
                                                     <div class="alert alert-primary"> 2.2.3. Estar al día en las obligaciones tributarias administradas por el SRI;</div>
-                                                    <input class="fancy-file" placeholder='Documentos Específicos' accept="application/pdf" type="file" name="persona_juridica3" id="persona_juridica3"></br>
+                                                    <i id="juridica3" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="juridica3-error"></span></i>
+                                                    <input class="fancy-file" accept="application/pdf" type="file" name="persona_juridica3" id="persona_juridica3"></br>
                                                 </div>
                                                 <div class='col-sm-12'>
+                                                    <br>
                                                     <div class="alert alert-primary"> 2.2.4. Estar al día en las obligaciones patronales con el IESS;</div>
-                                                    <input class="fancy-file" placeholder='Documentos Específicos' accept="application/pdf" type="file" name="persona_juridica4" id="persona_juridica4"></br>
+                                                    <i id="juridica4" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="juridica4-error"></span></i>
+                                                    <input class="fancy-file" accept="application/pdf" type="file" name="persona_juridica4" id="persona_juridica4"></br>
                                                 </div>
                                                 <div class='col-sm-12'>
+                                                    <br>
                                                     <div class="alert alert-primary"> 2.2.5. Original o copia certificada del RUC; y,</div>
-                                                    <input class="fancy-file" placeholder='Documentos Específicos' accept="application/pdf" type="file" name="persona_juridica5" id="persona_juridica5"></br>
+                                                    <i id="juridica5" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="juridica5-error"></span></i>
+                                                    <input class="fancy-file" accept="application/pdf" type="file" name="persona_juridica5" id="persona_juridica5"></br>
                                                 </div>
                                                 <div class='col-sm-12'>
+                                                    <br>
                                                     <div class="alert alert-primary"> 2.2.6. No constar como contratista incumplido y adjudicatario fallido en el Servicio Nacional de Contratación Pública (SERCOP) referente al Registro de Contratista,</div>
-                                                    <input class="fancy-file" placeholder='Documentos Específicos' accept="application/pdf" type="file" name="persona_juridica6" id="persona_juridica6"></br>
+                                                    <i id="juridica6" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="juridica6-error"></span></i>
+                                                    <input class="fancy-file" accept="application/pdf" type="file" name="persona_juridica6" id="persona_juridica6"></br>
                                                 </div>
                                             </div>
                                         </div>
@@ -962,16 +987,22 @@ $row = mysqli_fetch_array($result);
                                             <div class="clearfix"></div>
                                             <div class="x_content">
                                                 <div class='col-sm-12'>
+                                                    <br>
                                                     <div class="alert alert-primary"> 2.3.1. Original a copia certificada de las escrituras de constitución de la compañía, estatutos y sus reformas de ser el caso; </div>
-                                                    <input class="fancy-file" placeholder='Documentos Específicos' accept="application/pdf" type="file" name="persona_no_domic1" id="persona_no_domic1"></br>
+                                                    <i id="noDomic1" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="noDomic1-error"></span></i>
+                                                    <input class="fancy-file" accept="application/pdf" type="file" name="persona_no_domic1" id="persona_no_domic1"></br>
                                                 </div>
                                                 <div class='col-sm-12'>
+                                                    <br>
                                                     <div class="alert alert-primary"> 2.3.2. Original o copia certificada del nombramiento del representante legal, inscrito en el Registro Mercantil, vigente a la fecha de presentación; y,</div>
-                                                    <input class="fancy-file" placeholder='Documentos Específicos' accept="application/pdf" type="file" name="persona_no_domic2" id="persona_no_domic2"> </br>
+                                                    <i id="noDomic2" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="noDomic2-error"></span></i>
+                                                    <input class="fancy-file" accept="application/pdf" type="file" name="persona_no_domic2" id="persona_no_domic2"> </br>
                                                 </div>
                                                 <div class='col-sm-12'>
+                                                    <br>
                                                     <div class="alert alert-primary"> 2.3.3. Original o copia certificada del documento emitido por la autoridad tributaria o similar del país de origen.</div>
-                                                    <input class="fancy-file" placeholder='Documentos Específicos' accept="application/pdf" type="file" name="persona_no_domic3" id="persona_no_domic3"></br>
+                                                    <i id="noDomic3" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="noDomic3-error"></span></i>
+                                                    <input class="fancy-file" accept="application/pdf" type="file" name="persona_no_domic3" id="persona_no_domic3"></br>
                                                 </div>
                                             </div>
                                         </div>
@@ -980,7 +1011,7 @@ $row = mysqli_fetch_array($result);
                                 <div class="form-group row">
                                     <div class="ln_solid"></div>
                                     <div class="col-md-9 col-sm-9  offset-md-3"><br><br><br><br>
-                                        <button type="submit" id="guardacalificacion" name="guardacalificacion" class="boton btn btn-primary" style="background-color:#0A307C"> GUARDAR </button>
+                                        <button type="submit" id="guardacalificacion" name="guardacalificacion" class="boton btn btn-primary" style="background-color:#0A307C" onblur="mensajeError()"> GUARDAR </button>
                                         <a type="button" href="postulante_principal.php" class="boton btn btn-primary" style="background-color:#0A307C">CANCELAR</a>
                                     </div>
                                 </div>
@@ -996,7 +1027,7 @@ $row = mysqli_fetch_array($result);
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- /footer content -->
     <!-- <Validación de Formulario con Javascript>-->
-    <script src="../js/formulario_postulante.js"  type="text/javascript"></script>
+    <script src="../js/formulario_postulante.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>

@@ -1070,22 +1070,220 @@ function vigenciaApoderado() {
 
 
 
-const mensajeError = () => {
+function mensajeError() {
+	const archivoError = document.getElementById("archivo");
+	const archivo1Error = document.getElementById("archivo1");
+	const archivo2Error = document.getElementById("archivo2");
+	const archivo3Error = document.getElementById("archivo3");
+	const archivo4Error = document.getElementById("archivo4");
+	const archivo5Error = document.getElementById("archivo5");
+	const archivo6Error = document.getElementById("archivo6");
 
-	var archivo = document.getElementById("archivo").value;
-	var archivo1 = document.getElementById("archivo1").value;
-	var archivo2 = document.getElementById("archivo2").value;
-	var archivo3 = document.getElementById("archivo3").value;
-	var archivo4 = document.getElementById("archivo4").value;
-	var archivo5 = document.getElementById("archivo5").value;
-	var archivo6 = document.getElementById("archivo6").value;
-
-	let mensaje ='';
-
-	if(archivo=""){
-		console.log("VACIO");
-		
+	if (archivoError.files && archivoError.files[0]) {
+		//console.log("File Seleccionado : ", archivoError.files[0]);
+		document.getElementById("archivo-error").innerHTML = "";
+		document.getElementById("errorI").setAttribute("hidden", "");
+	} else {
+		document.getElementById("archivo-error").innerHTML = " ERROR !!!  Archivo  1.1 no ha sido cargado  ";
+		document.getElementById("errorI").removeAttribute("hidden", "");
 	}
+
+	if (archivo1Error.files && archivo1Error.files[0]) {
+		//console.log("File Seleccionado : ", archivo1Error.files[0]);
+		document.getElementById("archivo1-error").innerHTML = "";
+		document.getElementById("error1").setAttribute("hidden", "");
+	} else {
+		document.getElementById("archivo1-error").innerHTML = " ERROR !!!  Archivo  1.2 no ha sido cargado  ";
+		document.getElementById("error1").removeAttribute("hidden");
+	}
+
+
+	if (archivo2Error.files && archivo2Error.files[0]) {
+		//console.log("File Seleccionado : ", archivo2Error.files[0]);
+		document.getElementById("archivo2-error").innerHTML = "";
+		document.getElementById("error2").setAttribute("hidden", "");
+	} else {
+		document.getElementById("archivo2-error").innerHTML = " ERROR !!!! Archivo  1.3 no ha sido cargado ";
+		document.getElementById("error2").removeAttribute("hidden");
+	}
+
+
+	if (archivo3Error.files && archivo3Error.files[0]) {
+		//console.log("File Seleccionado : ", archivo3Error.files[0]);
+		document.getElementById("archivo3-error").innerHTML = "";
+		document.getElementById("error3").setAttribute("hidden", "");
+	} else {
+		document.getElementById("archivo3-error").innerHTML = " ERROR !!!! Archivo  1.4 no ha sido cargado ";
+		document.getElementById("error3").removeAttribute("hidden");
+	}
+
+
+	if (archivo4Error.files && archivo4.files[0]) {
+		//console.log("File Seleccionado : ", archivo4.files[0]);
+		document.getElementById("archivo4-error").innerHTML = "";
+		document.getElementById("error4").setAttribute("hidden", "");
+	} else {
+		document.getElementById("archivo4-error").innerHTML = " ERROR !!!! Archivo  1.5 no ha sido cargado ";
+		document.getElementById("error4").removeAttribute("hidden");
+	}
+
+
+	if (archivo5Error.files && archivo5Error.files[0]) {
+		//console.log("File Seleccionado : ", archivo5Error.files[0]);
+		document.getElementById("archivo5-error").innerHTML = "";
+		document.getElementById("error5").setAttribute("hidden", "");
+	} else {
+		document.getElementById("archivo5-error").innerHTML = " ERROR !!!! Archivo  1.6 no ha sido cargado ";
+		document.getElementById("error5").removeAttribute("hidden");
+	}
+
+
+	if (archivo6Error.files && archivo6Error.files[0]) {
+		//console.log("File Seleccionado : ", archivo6Error.files[0]);
+		document.getElementById("archivo6-error").innerHTML = "";
+		document.getElementById("error6").setAttribute("hidden", "");
+	} else {
+		document.getElementById("archivo6-error").innerHTML = " ERROR !!!! Archivo  1.7 no ha sido cargado ";
+		document.getElementById("error6").removeAttribute("hidden");
+	}
+
+	var idTipo = document.getElementById('razonsoc_postulante').value;
+
+	const natural1Error = document.getElementById("persona_natural1");
+	const natural2Error = document.getElementById("persona_natural2");
+	const natural3Error = document.getElementById("persona_natural3");
+
+	const juridica1Error = document.getElementById("persona_juridica1");
+	const juridica2Error = document.getElementById("persona_juridica2");
+	const juridica3Error = document.getElementById("persona_juridica3");
+	const juridica4Error = document.getElementById("persona_juridica4");
+	const juridica5Error = document.getElementById("persona_juridica5");
+	const juridica6Error = document.getElementById("persona_juridica6");
+
+	const noDomic1Error = document.getElementById("persona_no_domic1");
+	const noDomic2Error = document.getElementById("persona_no_domic1");
+	const noDomic3Error = document.getElementById("persona_no_domic1");
+
+
+
+	if ((idTipo == 1)||(idTipo == 2)) {
+		if (natural1Error.files && natural1Error.files[0]) {
+			//console.log("File Seleccionado : ", archivo6Error.files[0]);
+			document.getElementById("natural1-error").innerHTML = "";
+			document.getElementById("natural1").setAttribute("hidden", "");
+		} else {
+			document.getElementById("natural1-error").innerHTML = " ERROR !!!! Archivo  2.1.1 no ha sido cargado ";
+			document.getElementById("natural1").removeAttribute("hidden");
+		}
+
+		if (natural2Error.files && natural2Error.files[0]) {
+			//console.log("File Seleccionado : ", archivo6Error.files[0]);
+			document.getElementById("natural2-error").innerHTML = "";
+			document.getElementById("natural2").setAttribute("hidden", "");
+		} else {
+			document.getElementById("natural2-error").innerHTML = " ERROR !!!! Archivo  2.1.2 no ha sido cargado ";
+			document.getElementById("natural2").removeAttribute("hidden");
+		}
+
+		if (natural3Error.files && natural3Error.files[0]) {
+			//console.log("File Seleccionado : ", archivo6Error.files[0]);
+			document.getElementById("natural3-error").innerHTML = "";
+			document.getElementById("natural3").setAttribute("hidden", "");
+		} else {
+			document.getElementById("natural3-error").innerHTML = " ERROR !!!! Archivo  2.1.3 no ha sido cargado ";
+			document.getElementById("natural3").removeAttribute("hidden");
+		}
+	}else{
+		if ((idTipo == 3)||(idTipo == 4)){
+			if (juridica1Error.files && juridica1Error.files[0]) {
+				//console.log("File Seleccionado : ", archivo6Error.files[0]);
+				document.getElementById("juridica1-error").innerHTML = "";
+				document.getElementById("juridica1").setAttribute("hidden", "");
+			} else {
+				document.getElementById("juridica1-error").innerHTML = " ERROR !!!! Archivo  2.2.1 no ha sido cargado ";
+				document.getElementById("juridica1").removeAttribute("hidden");
+			}
+
+			if (juridica2Error.files && juridica2Error.files[0]) {
+				//console.log("File Seleccionado : ", archivo6Error.files[0]);
+				document.getElementById("juridica2-error").innerHTML = "";
+				document.getElementById("juridica2").setAttribute("hidden", "");
+			} else {
+				document.getElementById("juridica2-error").innerHTML = " ERROR !!!! Archivo  2.2.2 no ha sido cargado ";
+				document.getElementById("juridica2").removeAttribute("hidden");
+			}
+
+			if (juridica3Error.files && juridica3Error.files[0]) {
+				//console.log("File Seleccionado : ", archivo6Error.files[0]);
+				document.getElementById("juridica3-error").innerHTML = "";
+				document.getElementById("juridica3").setAttribute("hidden", "");
+			} else {
+				document.getElementById("juridica3-error").innerHTML = " ERROR !!!! Archivo  2.2.3 no ha sido cargado ";
+				document.getElementById("juridica3").removeAttribute("hidden");
+			}
+	
+			if (juridica4Error.files && juridica4Error.files[0]) {
+				//console.log("File Seleccionado : ", archivo6Error.files[0]);
+				document.getElementById("juridica4-error").innerHTML = "";
+				document.getElementById("juridica4").setAttribute("hidden", "");
+			} else {
+				document.getElementById("juridica4-error").innerHTML = " ERROR !!!! Archivo  2.2.4 no ha sido cargado ";
+				document.getElementById("juridica4").removeAttribute("hidden");
+			}
+
+			if (juridica5Error.files && juridica5Error.files[0]) {
+				//console.log("File Seleccionado : ", archivo6Error.files[0]);
+				document.getElementById("juridica5-error").innerHTML = "";
+				document.getElementById("juridica5").setAttribute("hidden", "");
+			} else {
+				document.getElementById("juridica5-error").innerHTML = " ERROR !!!! Archivo  2.2.5 no ha sido cargado ";
+				document.getElementById("juridica5").removeAttribute("hidden");
+			}
+
+			if (juridica6Error.files && juridica6Error.files[0]) {
+				//console.log("File Seleccionado : ", archivo6Error.files[0]);
+				document.getElementById("juridica6-error").innerHTML = "";
+				document.getElementById("juridica6").setAttribute("hidden", "");
+			} else {
+				document.getElementById("juridica6-error").innerHTML = " ERROR !!!! Archivo  2.2.6 no ha sido cargado ";
+				document.getElementById("juridica6").removeAttribute("hidden");
+			}
+		}else{
+			if (idTipo == 5){
+				if (noDomic1Error.files && noDomic1Error.files[0]) {
+					//console.log("File Seleccionado : ", archivo6Error.files[0]);
+					document.getElementById("noDomic1-error").innerHTML = "";
+					document.getElementById("noDomic1").setAttribute("hidden", "");
+				} else {
+					document.getElementById("noDomic1-error").innerHTML = " ERROR !!!! Archivo  2.3.1 no ha sido cargado ";
+					document.getElementById("noDomic1").removeAttribute("hidden");
+				}
+
+				if (noDomic2Error.files && noDomic2Error.files[0]) {
+					//console.log("File Seleccionado : ", archivo6Error.files[0]);
+					document.getElementById("noDomic2-error").innerHTML = "";
+					document.getElementById("noDomic2").setAttribute("hidden", "");
+				} else {
+					document.getElementById("noDomic2-error").innerHTML = " ERROR !!!! Archivo  2.3.2 no ha sido cargado ";
+					document.getElementById("noDomic2").removeAttribute("hidden");
+				}
+
+				if (noDomic3Error.files && noDomic3Error.files[0]) {
+					//console.log("File Seleccionado : ", archivo6Error.files[0]);
+					document.getElementById("noDomic3-error").innerHTML = "";
+					document.getElementById("noDomic3").setAttribute("hidden", "");
+				} else {
+					document.getElementById("noDomic3-error").innerHTML = " ERROR !!!! Archivo  2.3.3 no ha sido cargado ";
+					document.getElementById("noDomic3").removeAttribute("hidden");
+				}
+			}
+		}
+	}
+
+	console.log(idTipo);
+
+
+
 
 }
 
