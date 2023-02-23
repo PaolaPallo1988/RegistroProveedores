@@ -289,6 +289,7 @@ if (isset($_POST['reset_password'])) {
     }
 }
 
+
 if (isset($_POST['nuevo_password'])) {
     $var = "CONTRASEÑA INCORRECTA";
     $var1 = "CONTRASEÑA ACTUALIZADA";
@@ -306,9 +307,10 @@ if (isset($_POST['nuevo_password'])) {
             if ($queryactualiza) {
                 $sqlelimina = "DELETE FROM password_reset WHERE token_passreset='$tokenelimina'";
                 $queryelimina = mysqli_query($conn_registro, $sqlelimina);
-                echo "<script> alert('" . $var1 . "'); </script>";
-                // header('location: index.php');
-            }
+                echo "<script> alert('" . $var1 . "');
+                                window.location='index.php'; 
+                </script>";
+            }        
         } else {
             echo "<script> alert('" . $var . "'); </script>";
         }

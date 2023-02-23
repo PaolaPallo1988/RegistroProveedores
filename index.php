@@ -10,12 +10,10 @@
     <link rel="stylesheet" type="text/css" href="login/css/sourcesanspro-font.css">
     <!-- Main Style Css -->
     <link rel="stylesheet" href="login/css/style.css" />
-    <!-- jQuery library -->
+    <!-- jQuery library 
+    <script type="text/javascript" src=" .scripts/ seguirdad.js"></script>-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="production/css/sweetalert2/sweetalert2.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.7.0/dist/sweetalert2.all.min.js"></script>
-    <script type="text/javascript" src="production/js/sweetalert2/sweetalert2.min.js"></script>
-    <script type="text/javascript" src="scripts/seguirdad.js"></script>
 </head>
 
 <body class="form-v8">
@@ -111,7 +109,6 @@
     }
 </script>
 
-
 <script type="text/javascript">
     function openCity(evt, cityName) {
         var i, tabcontent, tablinks;
@@ -130,7 +127,9 @@
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
 </script>
-<script>
+
+
+<!--<script>
     window.onload = function() {
         document.addEventListener("contextmenu", function(e) {
             e.preventDefault();
@@ -170,7 +169,7 @@
         }
     }
     //edit: removed ";" from last "}" because of javascript error
-</script>
+</script>-->
 
 </body>
 <!-- This templates was made by Colorlib (https://colorlib.com) -->

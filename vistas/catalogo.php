@@ -18,26 +18,15 @@ $row = mysqli_fetch_array($result);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../images/favicon.ico" type="image/ico" />
-
-
     <title>SISTEMA DE CALIFICACIÓN DE PROVEEDORES | MDN </title>
-
-
-
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-
-
-
-
     <!-- NProgress -->
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-
     <!-- bootstrap-progressbar -->
     <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
@@ -46,30 +35,7 @@ $row = mysqli_fetch_array($result);
     <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
-
-    <!-- COLAPSE PARA MOSTRAR LA INFORMACIÓN -->
-    <script>
-        $('.collapse').on('show.bs.collapse', function() {
-            $('.collapse.show').collapse('hide');
-        });
-    </script>
-
-    <!-- INTERLINIADO -->
-    <style type="text/css">
-        .interlineado {
-            line-height: 150%;
-        }
-
-        .icon-image {
-            float: left;
-            background: url(img/icon.jpg) no-repeat;
-            /* Aquí agrega una imagen de 20x20*/
-            width: 20px;
-            /* El ancho y alto son las misma proporciones que la imagen*/
-            height: 20px;
-            margin-left: 10px;
-        }
-    </style>
+    <link href="../css/estilos.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">

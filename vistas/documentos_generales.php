@@ -46,20 +46,7 @@ $row = mysqli_fetch_array($result);
     <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
-
-    <!-- COLAPSE PARA MOSTRAR LA INFORMACIÓN -->
-    <script>
-        $('.collapse').on('show.bs.collapse', function() {
-            $('.collapse.show').collapse('hide');
-        });
-    </script>
-
-    <!-- INTERLINIADO -->
-    <style type="text/css">
-        .interlineado {
-            line-height: 150%;
-        }
-    </style>
+    <link href="../css/estilos.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">

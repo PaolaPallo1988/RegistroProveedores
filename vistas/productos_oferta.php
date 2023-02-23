@@ -210,7 +210,7 @@ $row = mysqli_fetch_array($result);
                                                     &nbsp; <input type="checkbox" id="check4" name="option1[]" value="SISTEMAS DE ENTRETENIMIENTO EN CIBERDEFENSA">
                                                     <label class="text-body" for="check4"> &nbsp;&nbsp;SISTEMAS DE ENTRETENIMIENTO EN CIBERDEFENSA (SIMULADOR)</label>
                                                     </br><label style="color:#0A307C" for="comment">Especificar el bien a proveer si es necesario</label>
-                                                    <textarea style="color:#0A307C" class="form-control" name="c4ivr_opt1" rows="5" onkeyup="javascript:this.value=this.value.toUpperCase();"> </textarea>
+                                                    <textarea class="form-control" name="c4ivr_opt1" rows="5" onkeyup="javascript:this.value=this.value.toUpperCase();"> </textarea>
                                                 </div></br></br>
                                                 <div class="form-check">
                                                     <font size=5 style="color:#0A307C">AERONAVES DE ALA FIJA Y SUS COMPONENTES</font><br>
@@ -223,7 +223,7 @@ $row = mysqli_fetch_array($result);
                                                     &nbsp; <input type="checkbox" id="check8" name="option2[]" value="AVIONES DE REABESTECIMIENTO EN VUELO">
                                                     <label class="text-body" for="check8"> &nbsp;&nbsp;AVIONES DE REABESTECIMIENTO EN VUELO </label>
                                                     </br><label for="comment">Especificar el bien a proveer si es necesario</label>
-                                                    <textarea style="color:#0A307C" class="form-control" name="areonavefija_opt2" rows="5" onkeyup="javascript:this.value=this.value.toUpperCase();"> </textarea>
+                                                    <textarea class="form-control" name="areonavefija_opt2" rows="5" onkeyup="javascript:this.value=this.value.toUpperCase();"> </textarea>
                                                 </div></br></br>
                                                 <div class="form-check">
                                                     <font size=5 style="color:#0A307C">DEFENSA AÉREA</font><br>

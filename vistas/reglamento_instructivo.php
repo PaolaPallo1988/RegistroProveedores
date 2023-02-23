@@ -18,8 +18,6 @@ $row = mysqli_fetch_array($result);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../images/favicon.ico" type="image/ico" />
-
-
     <title>SISTEMA DE CALIFICACIÓN DE PROVEEDORES | MDN </title>
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -29,7 +27,6 @@ $row = mysqli_fetch_array($result);
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-
     <!-- bootstrap-progressbar -->
     <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
@@ -40,19 +37,7 @@ $row = mysqli_fetch_array($result);
     <link href="../build/css/custom.min.css" rel="stylesheet">
     <!-- Font Awesome5 KIT -->
     <script src="https://kit.fontawesome.com/62ca4df395.js" crossorigin="anonymous"></script>
-    <!-- COLAPSE PARA MOSTRAR LA INFORMACIÓN -->
-    <script>
-        $('.collapse').on('show.bs.collapse', function() {
-            $('.collapse.show').collapse('hide');
-        });
-    </script>
-
-    <!-- INTERLINIADO -->
-    <style type="text/css">
-        .interlineado {
-            line-height: 150%;
-        }
-    </style>
+    <link href="../css/estilos.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
