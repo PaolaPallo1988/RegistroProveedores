@@ -212,10 +212,14 @@ $row = mysqli_fetch_array($result);
             </div>
             <!-- /page content -->
             <!-- footer content -->
-            <?php include('../cabeceras/pie_pagina.php');?>
+            <?php include('../cabeceras/pie_pagina.php'); ?>
             <!-- /footer content -->
         </div>
     </div>
+    <!-- SWEETALERT -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- SEGURIDAD -->
+    <script src="../js/seguridad.js"></script>
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->

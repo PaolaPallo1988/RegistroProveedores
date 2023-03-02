@@ -13,7 +13,6 @@ include "../conexion/conexion.php";
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/nicepage.css" media="screen">
   <link rel="stylesheet" href="../css/Casa.css" media="screen">
-
   <script type="text/javascript" src="../js/nicepage.js"></script>
   <!-- Sweetalert2 -->
   <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.4.17/dist/sweetalert2.all.min.js"></script>
@@ -169,7 +168,7 @@ include "../conexion/conexion.php";
               <div class="u-container-layout u-container-layout-5">
                 <div class="u-expanded u-grey-light-2 u-map">
                   <div class="embed-responsive">
-                    <iframe class="embed-responsive-item" src="//maps.google.com/maps?output=embed&amp;q=QF9Q%2BJ3R%2C%20J.B.Vela%2C%20Quito%20DC%20170121&amp;z=10&amp;t=m" data-map="JTdCJTIycG9zaXRpb25UeXBlJTIyJTNBJTIybWFwLWFkZHJlc3MlMjIlMkMlMjJhZGRyZXNzJTIyJTNBJTIyUUY5USUyQkozUiUyQyUyMEouQi5WZWxhJTJDJTIwUXVpdG8lMjBEQyUyMDE3MDEyMSUyMiUyQyUyMnpvb20lMjIlM0ExMCUyQyUyMnR5cGVJZCUyMiUzQSUyMnJvYWQlMjIlMkMlMjJsYW5nJTIyJTNBbnVsbCUyQyUyMmFwaUtleSUyMiUzQW51bGwlMkMlMjJtYXJrZXJzJTIyJTNBJTVCJTVEJTdE"></iframe>
+                    <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d498.72324319530406!2d-78.5125257!3d-0.2308154!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb839bda8c40c8ba1!2sMinisterio%20de%20Defensa%20Nacional!5e0!3m2!1ses!2sec!4v1582906294900!5m2!1ses!2sec" width="59%" height="250" frameborder="0" allowfullscreen="allowfullscreen" data-map="JTdCJTIycG9zaXRpb25UeXBlJTIyJTNBJTIybWFwLWFkZHJlc3MlMjIlMkMlMjJhZGRyZXNzJTIyJTNBJTIyUUY5USUyQkozUiUyQyUyMEouQi5WZWxhJTJDJTIwUXVpdG8lMjBEQyUyMDE3MDEyMSUyMiUyQyUyMnpvb20lMjIlM0ExMCUyQyUyMnR5cGVJZCUyMiUzQSUyMnJvYWQlMjIlMkMlMjJsYW5nJTIyJTNBbnVsbCUyQyUyMmFwaUtleSUyMiUzQW51bGwlMkMlMjJtYXJrZXJzJTIyJTNBJTVCJTVEJTdE"></iframe>
                   </div>
                 </div>
               </div>

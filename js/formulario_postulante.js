@@ -1279,12 +1279,7 @@ function mensajeError() {
 			}
 		}
 	}
-
 	console.log(idTipo);
-
-
-
-
 }
 
 

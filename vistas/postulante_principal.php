@@ -72,9 +72,7 @@ $row = mysqli_fetch_array($result);
     <!--- FORMATO DE BOTONES ---><!-- INTERLINIADO -->
     <link href="../css/botones.css" rel="stylesheet">
 
-
-
-
+</head>
 
 <body class="nav-md">
     <div class="container body">
@@ -858,15 +856,15 @@ $row = mysqli_fetch_array($result);
                                                 <div class="alert alert-primary"> 1.3 El proveedor (fabricante o distribuidor) de bienes estratégicos y/o prestación de servicios conexos, presentará los documentos que acrediten la capacidad y experiencia en su fabricación, distribución y/o comercialización.
                                                     Para la capacidad presentará certificaciones MILlTARY STANDARD: (MIL STD), Standardization Agreement (STANAG), ISO, etc. u otros documentos del bien y/o prestación de! servicio conexo de acuerdo a la naturaleza del
                                                     bien ofertado. Para la experiencia presentará documentos respecto de la comercialización y/o certificaciones emitidas por los clientes a quienes ha proveído. El distribuidor, además, presentará una carta de autorización como distribuidor;</div>
-                                                    <i id="error2" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="archivo2-error"></span></i>
-                                                    <input class="fancy-file" accept="application/pdf" type="file" name="archivo2" id="archivo2" required><br>
+                                                <i id="error2" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="archivo2-error"></span></i>
+                                                <input class="fancy-file" accept="application/pdf" type="file" name="archivo2" id="archivo2" required><br>
                                             </div>
                                             <div class='col-sm-12'>
                                                 <br>
                                                 <div class="alert alert-primary">1.4 El distribuidor nacional o extranjero que por su reciente creación o autorización de distribución (no mayor a 1 año), no pueda presentar los documentos que acrediten su capacidad y experiencia,
                                                     podrá presentar los documentos del fabricante del bien y/o servicio conexo que oferta;</div>
-                                                    <i id="error3" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="archivo3-error"></span></i>
-                                                    <input class="fancy-file" accept="application/pdf" type="file" name="archivo3" id="archivo3" required><br>
+                                                <i id="error3" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="archivo3-error"></span></i>
+                                                <input class="fancy-file" accept="application/pdf" type="file" name="archivo3" id="archivo3" required><br>
                                             </div>
                                             <div class='col-sm-12'>
                                                 <br>
@@ -875,8 +873,8 @@ $row = mysqli_fetch_array($result);
                                                     y de, su representante legal o apoderado;<br>
                                                     1.5.2Acuerdo de responsabilidad del compromiso de confidencialidad y reserva de información; y,<br>
                                                     1.5.3 Declaración de que toda la documentación presentada es auténtica y fidedigna.</div>
-                                                    <i id="error4" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="archivo4-error"></span></i>
-                                                    <input class="fancy-file" accept="application/pdf" type="file" name="archivo4" id="archivo4" required><br>
+                                                <i id="error4" hidden class="fas fa-exclamation-triangle text-span"><span class="text-span" id="archivo4-error"></span></i>
+                                                <input class="fancy-file" accept="application/pdf" type="file" name="archivo4" id="archivo4" required><br>
                                             </div>
                                             <div class='col-sm-12'>
                                                 <br>
@@ -1022,6 +1020,9 @@ $row = mysqli_fetch_array($result);
             </div>
         </div>
     </div>
+
+    <!-- SEGURIDAD -->
+    <script src="../js/seguridad.js"></script>
     <!-- footer content -->
     <?php include('../cabeceras/pie_pagina.php'); ?>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

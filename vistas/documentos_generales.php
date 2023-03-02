@@ -61,15 +61,15 @@ $row = mysqli_fetch_array($result);
 
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
-                    <figure class="full-box">
+                        <figure class="full-box">
                             <?php
-                            $nombre_postulante=$row['nombre_usuario'];
+                            $nombre_postulante = $row['nombre_usuario'];
                             $nombre_imagen = "../Fotos_Perfil/$nombre_postulante/$nombre_postulante.JPG";
-                            if (file_exists($nombre_imagen)){
+                            if (file_exists($nombre_imagen)) {
                             ?>
                                 <div align="center"><img src="../Fotos_Perfil/<?php echo $row['nombre_usuario'] ?>/<?php echo $row['nombre_usuario']; ?>.JPG" alt="..." class="img-circle profile_img"></div><br>
-                            <?php        
-                            }else{
+                            <?php
+                            } else {
                             ?>
                                 <div align="center"><img src="../images/AdminLTELogo.png" alt="..." class="img-circle profile_img"></div><br>
                             <?php
@@ -212,7 +212,10 @@ $row = mysqli_fetch_array($result);
     <!-- /footer content -->
     </div>
     </div>
-
+    <!-- SWEETALERT -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- SEGURIDAD -->
+    <script src="../js/seguridad.js"></script>
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->

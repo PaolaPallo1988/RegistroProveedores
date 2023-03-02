@@ -231,7 +231,7 @@ $row = mysqli_fetch_array($result);
                                                     <label class="text-body" for="check9"> &nbsp;&nbsp;RADARES DE ALERTA TEMPRANA </label></br>
                                                     &nbsp; <input type="checkbox" id="check10" name="option3[]" value="AVIONES NO TRIPULADOS (UAV) Y SISTEMA DE CONTROL (ALTA AUTONOMÍA)">
                                                     <label class="text-body" for="check10"> &nbsp;&nbsp;AVIONES NO TRIPULADOS (UAV) Y SISTEMA DE CONTROL (ALTA AUTONOMÍA) </label>
-                                                    </br><label  style="color:#0A307C" for="comment">Especificar el bien a proveer si es necesario</label>
+                                                    </br><label style="color:#0A307C" for="comment">Especificar el bien a proveer si es necesario</label>
                                                     <textarea class="form-control" name="defensaaerea_opt3" rows="5" onkeyup="javascript:this.value=this.value.toUpperCase();"> </textarea>
                                                 </div></br></br>
                                                 <div class="form-check">
@@ -240,7 +240,7 @@ $row = mysqli_fetch_array($result);
                                                     <label class="text-body" for="check11"> &nbsp;&nbsp;HELICÓPTEROS DE COMBATE </label></br>
                                                     &nbsp; <input type="checkbox" id="check12" name="option4[]" value="HELICÓPTEROS MULTIPROPÓSITO">
                                                     <label class="text-body" for="check12"> &nbsp;&nbsp;HELICÓPTEROS MULTIPROPÓSITO </label>
-                                                    </br><label  style="color:#0A307C" for="comment">Especificar el bien a proveer si es necesario</label>
+                                                    </br><label style="color:#0A307C" for="comment">Especificar el bien a proveer si es necesario</label>
                                                     <textarea class="form-control" name="aeronaverot_opt4" rows="5" onkeyup="javascript:this.value=this.value.toUpperCase();"> </textarea>
                                                 </div></br></br>
                                                 <div class="form-check">
@@ -265,7 +265,7 @@ $row = mysqli_fetch_array($result);
                                                     <label class="text-body" for="check21"> &nbsp;&nbsp;ARMAMENTO MAYOR (MORTEROS DESDE CAL. 60mm HASTA 120mm, 4.2PULG, OBUSES, FUSILES SIN RETROCESO,COHETES)</label></br>
                                                     &nbsp; <input type="checkbox" id="check221" name="option5[]" value="LANZADORES INDIVIDUALES, MÚLTIPLES Y COHETES ">
                                                     <label class="text-body" for="check221"> &nbsp;&nbsp;LANZADORES INDIVIDUALES, MÚLTIPLES Y COHETES </label>
-                                                    </br><label  style="color:#0A307C" for="comment">Especificar el bien a proveer si es necesario</label>
+                                                    </br><label style="color:#0A307C" for="comment">Especificar el bien a proveer si es necesario</label>
                                                     <textarea class="form-control" rows="5" name="armamento_opt5" onkeyup="javascript:this.value=this.value.toUpperCase();"> </textarea>
                                                 </div></br></br>
                                                 <div class="form-check">
@@ -280,7 +280,7 @@ $row = mysqli_fetch_array($result);
                                                     <label class="text-body" for="check25"> &nbsp;&nbsp;LANCHAS MISILARES </label></br>
                                                     &nbsp; <input type="checkbox" id="check26" name="option6[]" value="SUBMARINOS">
                                                     <label class="text-body" for="check26"> &nbsp;&nbsp;SUBMARINOS </label>
-                                                    </br><label  style="color:#0A307C" for="comment">Especificar el bien a proveer si es necesario</label>
+                                                    </br><label style="color:#0A307C" for="comment">Especificar el bien a proveer si es necesario</label>
                                                     <textarea class="form-control" rows="5" name="combate_opt6" onkeyup="javascript:this.value=this.value.toUpperCase();"> </textarea>
                                                 </div></br></br>
                                                 <div class="form-check">
@@ -291,7 +291,7 @@ $row = mysqli_fetch_array($result);
                                                     <label class="text-body" for="check28"> &nbsp;&nbsp;VEHICULOS BLINDADOS MULTIPROPÓSITO </label></br>
                                                     &nbsp; <input type="checkbox" id="check29" name="option7[]" value="HOSPITAL MÓVIL">
                                                     <label class="text-body" for="check29"> &nbsp;&nbsp;HOSPITAL MÓVIL </label>
-                                                    </br><label  style="color:#0A307C" for="comment">Especificar el bien a proveer si es necesario</label>
+                                                    </br><label style="color:#0A307C" for="comment">Especificar el bien a proveer si es necesario</label>
                                                     <textarea class="form-control" rows="5" name="blindados_opt7" onkeyup="javascript:this.value=this.value.toUpperCase();"> </textarea>
                                                 </div></br></br>
                                                 <div class="form-check">
@@ -340,6 +340,10 @@ $row = mysqli_fetch_array($result);
         </div>
     </div>
     </div>
+    <!-- SWEETALERT -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- SEGURIDAD -->
+    <script src="../js/seguridad.js"></script>
     <!-- footer content -->
     <?php include('../cabeceras/pie_pagina.php'); ?>
     <!-- /footer content -->

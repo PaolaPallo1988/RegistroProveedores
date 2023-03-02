@@ -22,7 +22,7 @@ if (isset($_POST['login'])) {
             $_SESSION['correo_usuario']         = $row['correo_usuario'];
             $_SESSION['perfil_id']              = $row['perfil_id'];
             $_SESSION['estado_id']              = $row['estado_id'];
-            
+
             /// Se manejan las sesiones
             if ($_SESSION['perfil_id'] == 1 && $_SESSION['estado_id'] == 1) {
                 header('location: vistas/principal.php');
