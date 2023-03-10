@@ -506,7 +506,7 @@ $row = mysqli_fetch_array($result);
     </div>
     </div>
     <!--- FUNCIONES DE FORMATO--->
-    <script src="../js/usuarios_ingreso.js"></script>
+    <script src="../js/formularios/usuarios_ingreso.js"></script>
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->

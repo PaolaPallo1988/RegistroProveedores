@@ -258,7 +258,7 @@ include('conexion/conexion.php');
 		</div>
 	</div>
 	<!-- <Validación de Formulario con Javascript>-->
-	<script src="js/registro_postulante.js"></script>
+	<script src="js/formularios/registro_postulante.js"></script>
 	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 	<!-- jQuery -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

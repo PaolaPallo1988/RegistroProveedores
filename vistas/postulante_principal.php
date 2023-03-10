@@ -1022,13 +1022,13 @@ $row = mysqli_fetch_array($result);
     </div>
 
     <!-- SEGURIDAD -->
-    <script src="../js/seguridad.js"></script>
+    <script src="../js/formularios/seguridad.js"></script>
     <!-- footer content -->
     <?php include('../cabeceras/pie_pagina.php'); ?>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- /footer content -->
     <!-- <Validación de Formulario con Javascript>-->
-    <script src="../js/formulario_postulante.js" type="text/javascript"></script>
+    <script src="../js/formularios/formulario_postulante.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>

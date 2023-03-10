@@ -16,7 +16,7 @@ function idleLogout() {
               title: 'AUTOCIERRE DE SESION POR INACTIVIDAD ',
               text: 'Redirecting...',
               icon: 'error',
-              timer: 20000,
+              timer: 1200000,
               dangerMode: true,
           })
           .then(() => {
@@ -25,7 +25,7 @@ function idleLogout() {
         }
     function resetTimer() {
         clearTimeout(t);
-        t = setTimeout(yourFunction, 1000);  // time is in milliseconds
+        t = setTimeout(yourFunction, 1200000);  // time is in milliseconds
         console.log("sesion activa  ");
     } 
 }

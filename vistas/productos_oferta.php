@@ -343,12 +343,12 @@ $row = mysqli_fetch_array($result);
     <!-- SWEETALERT -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- SEGURIDAD -->
-    <script src="../js/seguridad.js"></script>
+    <script src="../js/formularios/seguridad.js"></script>
     <!-- footer content -->
     <?php include('../cabeceras/pie_pagina.php'); ?>
     <!-- /footer content -->
     <!-- <Validación de Formulario con Javascript>-->
-    <script src="../js/formulario_postulante.js"></script>
+    <script src="../js/formulario/formulario_postulante.js"></script>
     <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
