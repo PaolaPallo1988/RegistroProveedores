@@ -6,4 +6,5 @@ if (!isset($_SESSION['id_usuario']) || (trim($_SESSION['id_usuario']) == '')) {
     header("location: ../../index.php");
     exit();
 }
+
 $session_id = $_SESSION['id_usuario'];

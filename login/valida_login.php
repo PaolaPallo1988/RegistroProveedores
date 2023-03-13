@@ -34,6 +34,9 @@ if (isset($_POST['login'])) {
                 header('location: vistas/postulante.php');
             }
         }
+
+        
+
         echo "<script>          
             Swal.fire({
                 icon: 'error',
@@ -45,6 +48,9 @@ if (isset($_POST['login'])) {
                     window.location = 'index.php';
                 });
                     </script>";
+
+        
+
              
     } else {
         echo "<script>
