@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Restablecimiento de contraseña PHP</title>
+    <title>RESTABLECIMIENTO DE CONTRASEÑA</title>
 
     <link rel="stylesheet" href="login/css/estilos.css">
     <link rel="stylesheet" href="login/css/font-awesome.css">

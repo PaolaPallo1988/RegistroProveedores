@@ -32,7 +32,7 @@
                             <div class="container">
                                 <div class="jumbotron">
                                     <h1>Inicio de Sesión</h1>
-                                    <p>SISTEMA DE CALIFICACION DE PROVEEDORES.</p><br>
+                                    <p>SISTEMA DE CALIFICACION DE PROVEEDORES.</p>
                                 </div>
                             </div>
                         </center><br>
@@ -48,6 +48,10 @@
                                 <input type="password" name="password_usuario" id="password_usuario" class="input-text" autocomplete="off" required>
                                 <span class="label">Contraseña</span>
                                 <span class="border"></span>
+                                <div>
+                                    <a style="color:#0B0B0B" ; text-align="left" href="olvidaste_contrasena.php">Olvidó su contraseña?</a>
+                                </div><br>
+
                             </label>
                         </div>
                         <center>
@@ -57,18 +61,21 @@
                             </div>
                         </center>
                         <div>
-                            <a style="color:#0B0B0B" ; href="olvidaste_contrasena.php">OLVIDO SU CONTRASEÑA?</a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; <a text-align="left" ; style="color:#0B0B0B" ; href="vistas/contacto_ciudadano.php">CONTACTO CIUDADANO</a>
+                            <a style="color:#0B0B0B" ; href="vistas/desbloquear_cuenta.php" >DESBLOQUEAR CUENTA</a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
+                            <a text-align="left" ; style="color:#0B0B0B"; href="vistas/contacto_ciudadano.php">CONTACTO CIUDADANO</a>
                         </div><br>
                         <div class="form-group">
                             <div class="alert alert-warning">
                                 <center> Dirección de Tecnologias de la Información y Comunicación</center>
                                 <br>
-                                <center>Ministerio de Defensa Nacional-2022</center><br>
+                                <center>Ministerio de Defensa Nacional-2022</center>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
+        
+
         </div>
     </div>
     <script src="js/formularios/formulario_ login.js"></script>

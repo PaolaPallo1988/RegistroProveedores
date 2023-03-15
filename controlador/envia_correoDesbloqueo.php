@@ -3,9 +3,9 @@
 $errors = [];
 
 
-include "conexion/conexion.php"; //CONEXION A LA BASE DE DATOS//
+include "../conexion/conexion.php"; //CONEXION A LA BASE DE DATOS//
 
-if (isset($_POST['reset_password'])) {
+if (isset($_POST['desbloquear_cuenta'])) {
     $email = mysqli_real_escape_string($conn_registro, (strip_tags($_POST['email'], ENT_QUOTES)));
     // asegurar que el usuario existe en nuestro sistema
     $query = "SELECT * FROM usuario WHERE correo_usuario='$email'";
@@ -15,10 +15,8 @@ if (isset($_POST['reset_password'])) {
     if (empty($email)) {
         array_push($errors, "Su correo es requerido");
     } else if (mysqli_num_rows($results) <= 0) {
-
-        array_push($errors, "Lo sentimos, no existe ningún usuario en nuestro sistema con ese correo electrónico");           sleep(5);       
+        array_push($errors, "Lo sentimos, no existe ningún usuario en nuestro sistema con ese correo electrónico");
     }
-
     // generate a unique random token of length 100
     $token = bin2hex(random_bytes(20));
 
@@ -28,23 +26,22 @@ if (isset($_POST['reset_password'])) {
             $registrousu[2] . "||" . //NOMBRE USUARIO
             $registrousu[3] . "||" . //CEDULA USUARIO
             $registrousu[6];        //CORREO USUARIO
-
         $id = $registrousu['id_usuario'];
 
         if (count($errors) == 0) {
             // almacenar el token en la tabla de la base de datos de restablecimiento de contraseña contra el correo electrónico del usuario
-            $sql = "INSERT INTO password_reset (usuario_id_passreset,email_passreset, token_passreset) VALUES ('$id','$email', '$token')";
+            $sql = "INSERT INTO desbloqueo_cuenta (usuario_idDesbloqueo, email_desbloqueo, token_desbloqueo) VALUES ('$id','$email', '$token')";
             $query = mysqli_query($conn_registro, $sql);
             // Envíe un correo electrónico al usuario con el token en un enlace en el que pueda hacer clic
-            require 'PHPMailer/class.phpmailer.php';
-            require 'PHPMailer/PHPMailerAutoload.php';
+            require '../PHPMailer/class.phpmailer.php';
+            require '../PHPMailer/PHPMailerAutoload.php';
             $body = "<html >
                     <head>
                         <title></title>
                         <meta charset='UTF-8'>
                         <meta name='viewport' content='width=device-width, initial-scale=1'>
                         <link href='css/style.css' rel='stylesheet'>
-                        <title>Confirmación de Correo</title>
+                        <title>Desbloqueo de cuenta</title>
                         <style type='text/css'>
                             /* Take care of image borders and formatting */
                             img {
@@ -216,9 +213,8 @@ if (isset($_POST['reset_password'])) {
                                                                     <br class='mobile-hide' />
                                                                     <h1 align='center'>Sistema de Calificaci&oacute;n de Proveedores</h1><br>
                                                                     Se&ntilde;or Postulante:<br><br> 
-                                                                    Para su conocimiento le informamos que usted solicit&oacute; un RESETEO DE CLAVE, para acceder a los SERVICIOS EN L&Iacute;NEA , 
-                                                                    haga clic en el siguiente ENLACE <a href=\"http://localhost/php/Proveedores_2022_FT/nueva_contrasena.php?token=" . $token . "\"> LINK </a>  para resetear la contrase&ntilde;a del sitio. <br>
-                                                                    Su clave temporal para acceso a Servicios en L&iacute;nea es:  " . $token . " , y tiene una duraci&oacute;n de 10 minutos. <br>
+                                                                    Se detectaron varios intentos de acceso incorrectos a su cuenta. para lo cual se ha generado el siguiente ENLACE <a href=\"http://localhost/php/Proveedores_2022_FT/nueva_contrasena.php?token=" . $token . "\"> LINK </a>  para DESBLOQUEAR SU CUENTA. <br>
+                                                                    Su clave temporal es:  " . $token . " , y tiene una duraci&oacute;n de 10 minutos, luego de lo cual por su seguridad deber&aacute; cambiar la contrase&ntilde;a <br>
                                                                 </td>
                                                                 <td class='mobile-hide' style='padding-top:20px;padding-bottom:0; vertical-align:bottom;' valign='bottom'>
                                                                     <table cellspacing='0' cellpadding='0' width='100%'>
@@ -274,7 +270,7 @@ if (isset($_POST['reset_password'])) {
             $mail->Username = "papallotito@gmail.com";
             $mail->Password = "fcacarhosxnyvblu";
             $mail->SetFrom('infoproveedores@midena.gob.ec', 'REGISTRO DE PROVEEDORES');
-            $mail->Subject = "ENTREGA DE CLAVE TEMPORAL" . $registrousu['cedula_usuario'];
+            $mail->Subject = "DESBLOQUEO DE CUENTA" . $registrousu['cedula_usuario'];
             //$mail->MsgHTML("Señor postulante, para su conocimiento le informamos que usted solicitó un RESETEO DE CLAVE para acceder a los SERVICIOS EN LÍNEA , haga clic en el siguiente enlace <a href=\"http://localhost/php/Proveedores_2022_FT/nueva_contrasena.php?token=" . $token . "\">link</a> para resetear la contrasena del sitio
             //                Su clave temporal para acceso a Servicios en Línea es
             //                ". $token. " , y tiene una duracion de 10 minutos.");
@@ -285,7 +281,7 @@ if (isset($_POST['reset_password'])) {
             if (!$mail->send()) {
                 echo "Error al enviar: " . $mail->ErrorInfo;
             } else {
-                header('location: pendiente.php?email=' . $email);
+                header('location: pendiente_desbloqueo.php?email=' . $email);
             }
         }
     }

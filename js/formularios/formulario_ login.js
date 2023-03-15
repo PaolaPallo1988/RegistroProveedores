@@ -13,11 +13,9 @@ if(window.history.replaceState){
             e.preventDefault();
             alert("Esta acción está prohibida");
         })
-
         $("#bloquear").on('copy', function(e) {
             e.preventDefault();
             alert("Esta acción está prohibida");
-
         })
     })
 
@@ -53,10 +51,8 @@ if(window.history.replaceState){
         document.getElementById(cityName).style.display = "block";
         evt.currentTarget.className += " active";
     }
-
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
-
 
 
 
@@ -88,7 +84,6 @@ if(window.history.replaceState){
                 disabledEvent(e);
             }
         }, false);
-
         function disabledEvent(e) {
             if (e.stopPropagation) {
                 e.stopPropagation();
