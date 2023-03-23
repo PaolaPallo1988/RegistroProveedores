@@ -1,8 +1,6 @@
 <?php
 require ('../conexion/conexion.php');
-require ('../login/session.php');
-$result = mysqli_query($conn_registro, "SELECT * FROM usuario u INNER JOIN perfil p ON u.id_usuario='$session_id' AND p.id_perfil= u.perfil_id") or die('Error In Session');
-$row = mysqli_fetch_array($result);
+
 ?>
 
 
@@ -33,7 +31,7 @@ $row = mysqli_fetch_array($result);
                 <?php
                 include('../controlador/envia_correoDesbloqueo.php');
                 ?>
-                <form class="form-detail" method="post" action="" id="formulario">
+                <form class="form-detail" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>" >
                     <div class="tabcontent" id="sign-in">
                         <center>
                             <div class="container">

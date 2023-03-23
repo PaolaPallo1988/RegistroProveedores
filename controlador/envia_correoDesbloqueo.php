@@ -213,7 +213,7 @@ if (isset($_POST['desbloquear_cuenta'])) {
                                                                     <br class='mobile-hide' />
                                                                     <h1 align='center'>Sistema de Calificaci&oacute;n de Proveedores</h1><br>
                                                                     Se&ntilde;or Postulante:<br><br> 
-                                                                    Se detectaron varios intentos de acceso incorrectos a su cuenta. para lo cual se ha generado el siguiente ENLACE <a href=\"http://localhost/php/Proveedores_2022_FT/nueva_contrasena.php?token=" . $token . "\"> LINK </a>  para DESBLOQUEAR SU CUENTA. <br>
+                                                                    Se detectaron varios intentos de acceso incorrectos a su cuenta. para lo cual se ha generado el siguiente ENLACE <a href=\"http://localhost/php/Proveedores_2022_FT/vistas/nueva_contrasenaDesbloqueo.php?token=" . $token . "\"> LINK </a>  para DESBLOQUEAR SU CUENTA. <br>
                                                                     Su clave temporal es:  " . $token . " , y tiene una duraci&oacute;n de 10 minutos, luego de lo cual por su seguridad deber&aacute; cambiar la contrase&ntilde;a <br>
                                                                 </td>
                                                                 <td class='mobile-hide' style='padding-top:20px;padding-bottom:0; vertical-align:bottom;' valign='bottom'>
@@ -270,7 +270,7 @@ if (isset($_POST['desbloquear_cuenta'])) {
             $mail->Username = "papallotito@gmail.com";
             $mail->Password = "fcacarhosxnyvblu";
             $mail->SetFrom('infoproveedores@midena.gob.ec', 'REGISTRO DE PROVEEDORES');
-            $mail->Subject = "DESBLOQUEO DE CUENTA" . $registrousu['cedula_usuario'];
+            $mail->Subject = "DESBLOQUEO DE CUENTA" . "  ". $registrousu['cedula_usuario'];
             //$mail->MsgHTML("Señor postulante, para su conocimiento le informamos que usted solicitó un RESETEO DE CLAVE para acceder a los SERVICIOS EN LÍNEA , haga clic en el siguiente enlace <a href=\"http://localhost/php/Proveedores_2022_FT/nueva_contrasena.php?token=" . $token . "\">link</a> para resetear la contrasena del sitio
             //                Su clave temporal para acceso a Servicios en Línea es
             //                ". $token. " , y tiene una duracion de 10 minutos.");
@@ -288,25 +288,29 @@ if (isset($_POST['desbloquear_cuenta'])) {
 }
 
 
-if (isset($_POST['nuevo_password'])) {
+if (isset($_POST['nueva_contrasenaDesbloqueo'])) {
     $var = "CONTRASEÑA INCORRECTA";
     $var1 = "CONTRASEÑA ACTUALIZADA";
+
     $new_password = (strip_tags($_POST["new_password"], ENT_QUOTES));
     $newv_password = (strip_tags($_POST["newv_password"], ENT_QUOTES));
-    $sql = "SELECT * FROM password_reset INNER JOIN usuario ON  password_reset.usuario_id_passreset = usuario.id_usuario";
+    $sql = "SELECT * FROM desbloqueo_cuenta INNER JOIN usuario ON  desbloqueo_cuenta.usuario_idDesbloqueo = usuario.id_usuario";
     $query = mysqli_query($conn_registro, $sql);
     while ($usuario = mysqli_fetch_assoc($query)) {
-        $emailactualiza = $usuario['email_passreset'];
-        $tokenelimina = $usuario['token_passreset'];
+        $emailactualiza = $usuario['email_desbloqueo'];
+        $tokenelimina = $usuario['token_desbloqueo'];
         if ($new_password === $newv_password) {
             $new_passwordhash = password_hash($newv_password, PASSWORD_DEFAULT);
-            $sqlactualiza = "UPDATE usuario SET password_usuario='$new_passwordhash' WHERE correo_usuario='$emailactualiza' ";
+            $estado="1";
+            $sqlactualiza = "UPDATE usuario SET password_usuario='$new_passwordhash', estado_id='$estado' WHERE correo_usuario='$emailactualiza' ";
             $queryactualiza = mysqli_query($conn_registro, $sqlactualiza);
             if ($queryactualiza) {
-                $sqlelimina = "DELETE FROM password_reset WHERE token_passreset='$tokenelimina'";
+
+                $sqlelimina = "DELETE FROM desbloqueo_cuenta WHERE token_desbloqueo='$tokenelimina'";
                 $queryelimina = mysqli_query($conn_registro, $sqlelimina);
+                
                 echo "<script> alert('" . $var1 . "');
-                                window.location='index.php'; 
+                                window.location='../login/logout.php'; 
                 </script>";
             }        
         } else {

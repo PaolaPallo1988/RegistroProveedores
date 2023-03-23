@@ -103,7 +103,7 @@
     <input type='submit' value='Enviar'>
 
     <br>
-    <div id="inputs"></div>-->
+    <div id="inputs"></div>
 
 
 
@@ -111,17 +111,8 @@
     <input type="text" id="empresa" name="empresa" /><span id="span1">Llena este campo</span>
 
     <button type='submit' onclick="valida()"> GUARDAR</button>
-
-
-
 </form>
+</html>-->
 
 
 
-
-
-
-
-
-
-</html>

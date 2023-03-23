@@ -55,10 +55,6 @@ $token_enlace = !empty($_GET['token']) ? $_GET['token'] : null;
                         <br>
                         <div class="form-row">
                             <label class="form-row-inner">
-                                <span class="label">Contraseña Generada</span><br>
-                                <input type="text" name="token_enlace" id="token_enlace" class="input-text" value="<?php echo $token_enlace ?>" disabled>
-                            </label><br>
-                            <label class="form-row-inner">
                                 <input type="password" autocomplete="off" name="new_password" id="new_password" class="input-text" autocomplete="off" onclick="mostrarPassword()" required>
                                 <span class="label">Nueva Contraseña &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="fa fa-eye-slash icon"></span>
                                     <span class="border"></span>
@@ -71,7 +67,7 @@ $token_enlace = !empty($_GET['token']) ? $_GET['token'] : null;
                         <center>
                             <div class="form-row-last">
                                 <button type="submit" name="nueva_contrasenaDesbloqueo" id="nueva_contrasenaDesbloqueo" class="register"><u>GUARDAR</u></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <button class="register"><a type="button" href="index.php">CANCELAR</a></button>
+                                <button class="register" type="button" href="index.php">CANCELAR</button>
                             </div>
                         </center>
                         <div class="form-group">
@@ -83,7 +79,7 @@ $token_enlace = !empty($_GET['token']) ? $_GET['token'] : null;
                 </form>
 
                 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-                <script src="../js/formulario_nuevaContrasena.js" type="text/javascript"> </script>
+                <script src="../js/formularios/formulario_nuevaContrasena.js" type="text/javascript"> </script>
             </div>
         </div>
     </div>

@@ -90,7 +90,7 @@ $token_enlace = !empty($_GET['token']) ? $_GET['token'] : null;
                 </form>
 
                 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-                <script src="./js/formulario_nuevaContrasena.js" type="text/javascript"> </script>
+                <script src="./js/formularios/formulario_nuevaContrasena.js" type="text/javascript"> </script>
             </div>
         </div>
     </div>

@@ -18,7 +18,7 @@
                 <p>
                     Enviamos un correo electrónico a <b><?php echo $_GET['email'] ?></b> para ayudarte a desbloquear tu cuenta. </p>
                 <p>Inicie sesión en su cuenta de correo electrónico y haga clic en el enlace que le enviamos para restablecer su cuenta bloqueada, por seguridad se le solicitará el cambio de contraseña</p><br>
-                <a href="index.php">Inicio Sesión</a>
+                <a href="../login/logout.php">Inicio Sesión</a>
             </section>
 
         </section>

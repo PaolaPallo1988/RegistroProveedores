@@ -6,6 +6,8 @@ $errors = [];
 include "conexion/conexion.php"; //CONEXION A LA BASE DE DATOS//
 
 if (isset($_POST['reset_password'])) {
+
+
     $email = mysqli_real_escape_string($conn_registro, (strip_tags($_POST['email'], ENT_QUOTES)));
     // asegurar que el usuario existe en nuestro sistema
     $query = "SELECT * FROM usuario WHERE correo_usuario='$email'";
@@ -16,7 +18,8 @@ if (isset($_POST['reset_password'])) {
         array_push($errors, "Su correo es requerido");
     } else if (mysqli_num_rows($results) <= 0) {
 
-        array_push($errors, "Lo sentimos, no existe ningún usuario en nuestro sistema con ese correo electrónico");           sleep(5);       
+        array_push($errors, "Lo sentimos, no existe ningún usuario en nuestro sistema con ese correo electrónico");
+        sleep(5);
     }
 
     // generate a unique random token of length 100
@@ -32,6 +35,27 @@ if (isset($_POST['reset_password'])) {
         $id = $registrousu['id_usuario'];
 
         if (count($errors) == 0) {
+
+            //    SACAR LA IP DE LA MAQUINA 
+            if (getenv('HTTP_CLIENT_IP')) {
+                $ip = getenv('HTTP_CLIENT-IP');
+            } elseif (getenv('HTTP_X_FORWARDED_FOR')) {
+                $ip = getenv('HTTP_X_FORWARDED_FOR');
+            } elseif (getenv('HTTP_X_FORWARDED')) {
+                $ip = getenv('HTTP_X_FORWARDED');
+            } elseif (getenv('HTTP_FORWARDED_FOR')) {
+                $ip = getenv('HTTP_FORWARDED_FOR');
+            } elseif (getenv('HTTP_FORWARDED')) {
+                $ip = getenv('HTTP_FORWARDED');
+            } else {
+                $ip = $_SERVER['REMOTE_ADDR'];
+            }
+            //    SACAR LA IP DE LA MAQUINA 
+            $fecha = date("Y-m-d");
+            echo $fecha;
+
+
+
             // almacenar el token en la tabla de la base de datos de restablecimiento de contraseña contra el correo electrónico del usuario
             $sql = "INSERT INTO password_reset (usuario_id_passreset,email_passreset, token_passreset) VALUES ('$id','$email', '$token')";
             $query = mysqli_query($conn_registro, $sql);
@@ -120,7 +144,6 @@ if (isset($_POST['reset_password'])) {
                         <style type='text/css' media='screen'>
                             @media screen {
                                 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400);
-
                                 /* Thanks Outlook 2013! */
                                 td,
                                 h1,
@@ -166,7 +189,6 @@ if (isset($_POST['reset_password'])) {
                                 td[class*='mobile-no-padding-bottom'] {
                                     padding-bottom: 0 !important;
                                 }
-
                                 td[class~='mobile-center'] {
                                     text-align: center !important;
                                 }
@@ -216,7 +238,7 @@ if (isset($_POST['reset_password'])) {
                                                                     <br class='mobile-hide' />
                                                                     <h1 align='center'>Sistema de Calificaci&oacute;n de Proveedores</h1><br>
                                                                     Se&ntilde;or Postulante:<br><br> 
-                                                                    Para su conocimiento le informamos que usted solicit&oacute; un RESETEO DE CLAVE, para acceder a los SERVICIOS EN L&Iacute;NEA , 
+                                                                    Para su conocimiento le informamos que usted solicit&oacute; un RESETEO DE CLAVE, para acceder a los SERVICIOS EN L&Iacute;NEA a trav&eacute;s de la IP:  $ip , el  $fecha , 
                                                                     haga clic en el siguiente ENLACE <a href=\"http://localhost/php/Proveedores_2022_FT/nueva_contrasena.php?token=" . $token . "\"> LINK </a>  para resetear la contrase&ntilde;a del sitio. <br>
                                                                     Su clave temporal para acceso a Servicios en L&iacute;nea es:  " . $token . " , y tiene una duraci&oacute;n de 10 minutos. <br>
                                                                 </td>
@@ -312,7 +334,7 @@ if (isset($_POST['nuevo_password'])) {
                 echo "<script> alert('" . $var1 . "');
                                 window.location='index.php'; 
                 </script>";
-            }        
+            }
         } else {
             echo "<script> alert('" . $var . "'); </script>";
         }
