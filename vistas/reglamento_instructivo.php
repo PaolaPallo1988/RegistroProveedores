@@ -37,7 +37,6 @@ $row = mysqli_fetch_array($result);
     <link href="../build/css/custom.min.css" rel="stylesheet">
     <!-- Font Awesome5 KIT -->
     <script src="https://kit.fontawesome.com/62ca4df395.js" crossorigin="anonymous"></script>
-    <link href="../css/estilos.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -77,7 +76,7 @@ $row = mysqli_fetch_array($result);
                     <br><br><br>
                     <?php
                     $cedula_postulante = $row['cedula_usuario'];
-                    $sqlestado = "SELECT * FROM estado_formulario WHERE cedula_usuario_estado= '$cedula_postulante'";
+                    $sqlestado = "SELECT * FROM usuario WHERE cedula_usuario= '$cedula_postulante'";
                     $resultado = mysqli_query($conn_registro, $sqlestado);
                     if ($estado = mysqli_fetch_array($resultado)) {
                         if (($estado['estado_calificacion'] === '1') && ($estado['estado_productosOferta'] === '1')) {

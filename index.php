@@ -56,7 +56,7 @@
                         </div>
                         <center>
                             <div class="form-row-last">
-                                <button type="submit" name="login" class="register"><u>INICIAR SESIÓN</u></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="submit" name="login" id="login" class="register"><u>INICIAR SESIÓN</u></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 <button class="btn btn-default btn-lg"><a type="button" href="registro_postulante.php" class="register">REGISTRARSE</a></button>
                             </div>
                         </center>

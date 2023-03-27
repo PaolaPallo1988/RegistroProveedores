@@ -1,6 +1,7 @@
 
 
 
+
 //FUNCIONES VALIDAR SLO NUMEROS Y LETRAS
 	function valideKey(evt) {
 		// el código es la representación ASCII decimal de la tecla presionada.

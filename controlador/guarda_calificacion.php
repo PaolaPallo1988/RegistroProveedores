@@ -78,7 +78,7 @@ if (isset($_POST['guardacalificacion'])) {
             </script>";
     } else {
 
-        $sqlactualizar = "UPDATE estado_formulario SET estado_calificacion='$calificacion' WHERE cedula_usuario_estado='$cedula_postulante'";
+        $sqlactualizar = "UPDATE usuario SET estado_calificacion='$calificacion' WHERE cedula_usuario='$cedula_postulante'";
         $sqlproducto_oferta = mysqli_query($conn_registro, $sqlactualizar);
 
         $usuario = $nombre_postulante;

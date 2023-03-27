@@ -1,24 +1,12 @@
 
 <?php
-$errors = [];
-
-
 include "../conexion/conexion.php"; //CONEXION A LA BASE DE DATOS//
 
-if (isset($_POST['desbloquear_cuenta'])) {
-    $email = mysqli_real_escape_string($conn_registro, (strip_tags($_POST['email'], ENT_QUOTES)));
-    // asegurar que el usuario existe en nuestro sistema
+if (isset($_POST['login'])) {
     $query = "SELECT * FROM usuario WHERE correo_usuario='$email'";
     $results = mysqli_query($conn_registro, $query);
     $results1 = mysqli_query($conn_registro, $query);
 
-    if (empty($email)) {
-        array_push($errors, "Su correo es requerido");
-    } else if (mysqli_num_rows($results) <= 0) {
-        array_push($errors, "Lo sentimos, no existe ningún usuario en nuestro sistema con ese correo electrónico");
-    }
-    // generate a unique random token of length 100
-    $token = bin2hex(random_bytes(20));
 
     while ($registrousu = mysqli_fetch_array($results1)) {
         $datosusu = $registrousu[0] . "||" . //ID
@@ -26,22 +14,40 @@ if (isset($_POST['desbloquear_cuenta'])) {
             $registrousu[2] . "||" . //NOMBRE USUARIO
             $registrousu[3] . "||" . //CEDULA USUARIO
             $registrousu[6];        //CORREO USUARIO
+
         $id = $registrousu['id_usuario'];
 
-        if (count($errors) == 0) {
-            // almacenar el token en la tabla de la base de datos de restablecimiento de contraseña contra el correo electrónico del usuario
-            $sql = "INSERT INTO desbloqueo_cuenta (usuario_idDesbloqueo, email_desbloqueo, token_desbloqueo) VALUES ('$id','$email', '$token')";
-            $query = mysqli_query($conn_registro, $sql);
-            // Envíe un correo electrónico al usuario con el token en un enlace en el que pueda hacer clic
-            require '../PHPMailer/class.phpmailer.php';
-            require '../PHPMailer/PHPMailerAutoload.php';
-            $body = "<html >
+        //    SACAR LA IP DE LA MAQUINA 
+        if (getenv('HTTP_CLIENT_IP')) {
+            $ip = getenv('HTTP_CLIENT-IP');
+        } elseif (getenv('HTTP_X_FORWARDED_FOR')) {
+            $ip = getenv('HTTP_X_FORWARDED_FOR');
+        } elseif (getenv('HTTP_X_FORWARDED')) {
+            $ip = getenv('HTTP_X_FORWARDED');
+        } elseif (getenv('HTTP_FORWARDED_FOR')) {
+            $ip = getenv('HTTP_FORWARDED_FOR');
+        } elseif (getenv('HTTP_FORWARDED')) {
+            $ip = getenv('HTTP_FORWARDED');
+        } else {
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+        //    SACAR LA IP DE LA MAQUINA 
+
+        // SACA LA FECHA 
+        $fecha = date("Y-m-d h:i:s");
+        echo $fecha;
+        // SACA LA FECHA 
+        
+        // Envíe un correo electrónico al usuario con el token en un enlace en el que pueda hacer clic
+        require '../PHPMailer/class.phpmailer.php';
+        require '../PHPMailer/PHPMailerAutoload.php';
+        $body = "<html >
                     <head>
                         <title></title>
                         <meta charset='UTF-8'>
                         <meta name='viewport' content='width=device-width, initial-scale=1'>
                         <link href='css/style.css' rel='stylesheet'>
-                        <title>Desbloqueo de cuenta</title>
+                        <title>Confirmación de Correo</title>
                         <style type='text/css'>
                             /* Take care of image borders and formatting */
                             img {
@@ -117,7 +123,6 @@ if (isset($_POST['desbloquear_cuenta'])) {
                         <style type='text/css' media='screen'>
                             @media screen {
                                 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400);
-
                                 /* Thanks Outlook 2013! */
                                 td,
                                 h1,
@@ -163,7 +168,6 @@ if (isset($_POST['desbloquear_cuenta'])) {
                                 td[class*='mobile-no-padding-bottom'] {
                                     padding-bottom: 0 !important;
                                 }
-
                                 td[class~='mobile-center'] {
                                     text-align: center !important;
                                 }
@@ -213,8 +217,8 @@ if (isset($_POST['desbloquear_cuenta'])) {
                                                                     <br class='mobile-hide' />
                                                                     <h1 align='center'>Sistema de Calificaci&oacute;n de Proveedores</h1><br>
                                                                     Se&ntilde;or Postulante:<br><br> 
-                                                                    Se detectaron varios intentos de acceso incorrectos a su cuenta a trav&eacute;s de la IP:  $ip , el  $fecha , para lo cual se ha generado el siguiente ENLACE <a href=\"http://localhost/php/Proveedores_2022_FT/vistas/nueva_contrasenaDesbloqueo.php?token=" . $token . "\"> LINK </a>  para DESBLOQUEAR SU CUENTA. <br>
-                                                                    Su clave temporal es:  " . $token . " , y tiene una duraci&oacute;n de 10 minutos, luego de lo cual por su seguridad deber&aacute; cambiar la contrase&ntilde;a <br>
+                                                                    Registramos su acceso EXITOSO al Sistema de Calificaci&oacute;n de Proveedores, el $fecha , desde un dispositivo con la siguiente IP  $ip
+                                                                    Gracias por usar el Sistema de Calificaci&oacute;n de Proveedores.
                                                                 </td>
                                                                 <td class='mobile-hide' style='padding-top:20px;padding-bottom:0; vertical-align:bottom;' valign='bottom'>
                                                                     <table cellspacing='0' cellpadding='0' width='100%'>
@@ -252,70 +256,35 @@ if (isset($_POST['desbloquear_cuenta'])) {
                             </table>
                     </body>
                     </html> ";
-            $body = preg_replace('/\\\\/', '', $body);
-            $bodu = utf8_encode($body);
-            $mail = new PHPMailer();
-            //indico a la clase que use SMTP
-            $mail->IsSMTP();
-            //permite modo debug para ver mensajes de las cosas que van ocurriendo
-            //$mail->SMTPDebug = 1;
-            //Debo de hacer autenticación SMTP
-            $mail->SMTPAuth = true;
-            $mail->SMTPSecure = "tls";
-            //indico el servidor de Gmail para SMTP
-            $mail->Host = "smtp.gmail.com";
-            //indico el puerto que usa Gmail
-            $mail->Port = 587;
-            //indico un usuario / clave de un usuario de gmail
-            $mail->Username = "papallotito@gmail.com";
-            $mail->Password = "fcacarhosxnyvblu";
-            $mail->SetFrom('infoproveedores@midena.gob.ec', 'REGISTRO DE PROVEEDORES');
-            $mail->Subject = "DESBLOQUEO DE CUENTA" . "  ". $registrousu['cedula_usuario'];
-            //$mail->MsgHTML("Señor postulante, para su conocimiento le informamos que usted solicitó un RESETEO DE CLAVE para acceder a los SERVICIOS EN LÍNEA , haga clic en el siguiente enlace <a href=\"http://localhost/php/Proveedores_2022_FT/nueva_contrasena.php?token=" . $token . "\">link</a> para resetear la contrasena del sitio
-            //                Su clave temporal para acceso a Servicios en Línea es
-            //                ". $token. " , y tiene una duracion de 10 minutos.");
-            $mail->MsgHTML($body);
-            //indico destinatario
-            $address = $email;
-            $mail->AddAddress($address, $registrousu['nombre_usuario'] . " " . $registrousu['apellido_usuario']);
-            if (!$mail->send()) {
-                echo "Error al enviar: " . $mail->ErrorInfo;
-            } else {
-                header('location: pendiente_desbloqueo.php?email=' . $email);
-            }
-        }
-    }
-}
-
-
-if (isset($_POST['nueva_contrasenaDesbloqueo'])) {
-    $var = "CONTRASEÑA INCORRECTA";
-    $var1 = "CONTRASEÑA ACTUALIZADA";
-
-    $new_password = (strip_tags($_POST["new_password"], ENT_QUOTES));
-    $newv_password = (strip_tags($_POST["newv_password"], ENT_QUOTES));
-    $sql = "SELECT * FROM desbloqueo_cuenta INNER JOIN usuario ON  desbloqueo_cuenta.usuario_idDesbloqueo = usuario.id_usuario";
-    $query = mysqli_query($conn_registro, $sql);
-    while ($usuario = mysqli_fetch_assoc($query)) {
-        $emailactualiza = $usuario['email_desbloqueo'];
-        $tokenelimina = $usuario['token_desbloqueo'];
-        if ($new_password === $newv_password) {
-            $new_passwordhash = password_hash($newv_password, PASSWORD_DEFAULT);
-            $estado="1";
-            $sqlactualiza = "UPDATE usuario SET password_usuario='$new_passwordhash', estado_id='$estado' WHERE correo_usuario='$emailactualiza' ";
-            $queryactualiza = mysqli_query($conn_registro, $sqlactualiza);
-            if ($queryactualiza) {
-
-                $sqlelimina = "DELETE FROM desbloqueo_cuenta WHERE token_desbloqueo='$tokenelimina'";
-                $queryelimina = mysqli_query($conn_registro, $sqlelimina);
-                
-                echo "<script> alert('" . $var1 . "');
-                                window.location='../login/logout.php'; 
-                </script>";
-            }        
-        } else {
-            echo "<script> alert('" . $var . "'); </script>";
-        }
+        $body = preg_replace('/\\\\/', '', $body);
+        $bodu = utf8_encode($body);
+        $mail = new PHPMailer();
+        //indico a la clase que use SMTP
+        $mail->IsSMTP();
+        //permite modo debug para ver mensajes de las cosas que van ocurriendo
+        //$mail->SMTPDebug = 1;
+        //Debo de hacer autenticación SMTP
+        $mail->SMTPAuth = true;
+        $mail->SMTPSecure = "tls";
+        //indico el servidor de Gmail para SMTP
+        $mail->Host = "smtp.gmail.com";
+        //indico el puerto que usa Gmail
+        $mail->Port = 587;
+        //indico un usuario / clave de un usuario de gmail
+        $mail->Username = "papallotito@gmail.com";
+        $mail->Password = "fcacarhosxnyvblu";
+        $mail->SetFrom('infoproveedores@midena.gob.ec', 'REGISTRO DE PROVEEDORES');
+        $mail->Subject = "ACCESO EXITOSO : " . $registrousu['nombre_usuario'];
+        //$mail->MsgHTML("Señor postulante, para su conocimiento le informamos que usted solicitó un RESETEO DE CLAVE para acceder a los SERVICIOS EN LÍNEA , haga clic en el siguiente enlace <a href=\"http://localhost/php/Proveedores_2022_FT/nueva_contrasena.php?token=" . $token . "\">link</a> para resetear la contrasena del sitio
+        //                Su clave temporal para acceso a Servicios en Línea es
+        //                ". $token. " , y tiene una duracion de 10 minutos.");
+        $mail->MsgHTML($body);
+        //indico destinatario
+        $address = $email;
+        $mail->AddAddress($address, $registrousu['nombre_usuario'] . " " . $registrousu['apellido_usuario']);
+        if (!$mail->send()) {
+            echo "Error al enviar: " . $mail->ErrorInfo;
+        } 
     }
 }
 

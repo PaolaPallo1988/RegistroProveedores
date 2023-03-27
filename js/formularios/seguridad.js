@@ -1,4 +1,5 @@
 // CIERRE DE SESION AL PASAR 20MNTS TIEMPO DETERMINADO DE INACTIVIDAD
+
 function idleLogout() {
     var t;
     window.onload = resetTimer;
@@ -30,3 +31,12 @@ function idleLogout() {
     } 
 }
 idleLogout();
+
+// CIERRE DE SESION AL PASAR 20MNTS TIEMPO DETERMINADO DE INACTIVIDAD
+
+
+//QUE NO SE RECARGE LA PAGINA AL HACER F5
+if(window.history.replaceState){
+	window.history.replaceState(null,null,window.location.href)
+}
+//QUE NO SE RECARGE LA PAGINA AL HACER F5

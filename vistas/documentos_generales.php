@@ -18,21 +18,11 @@ $row = mysqli_fetch_array($result);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../images/favicon.ico" type="image/ico" />
-
-
     <title>SISTEMA DE CALIFICACIÓN DE PROVEEDORES | MDN </title>
-
-
-
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-
-
-
-
     <!-- NProgress -->
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
@@ -46,7 +36,6 @@ $row = mysqli_fetch_array($result);
     <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
-    <link href="../css/estilos.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -86,7 +75,7 @@ $row = mysqli_fetch_array($result);
                     <br><br><br>
                     <?php
                     $cedula_postulante = $row['cedula_usuario'];
-                    $sqlestado = "SELECT * FROM estado_formulario WHERE cedula_usuario_estado= '$cedula_postulante'";
+                    $sqlestado = "SELECT * FROM usuario WHERE cedula_usuario= '$cedula_postulante'";
                     $resultado = mysqli_query($conn_registro, $sqlestado);
                     if ($estado = mysqli_fetch_array($resultado)) {
                         if (($estado['estado_calificacion'] === '1') && ($estado['estado_productosOferta'] === '1')) {

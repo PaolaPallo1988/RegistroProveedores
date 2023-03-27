@@ -59,7 +59,7 @@ if (isset($_POST['guarda_oferta'])) {
             </script>";
     } else {
 
-        $sqlactualizar="UPDATE estado_formulario SET estado_productosOferta='$producto_oferta' WHERE cedula_usuario_estado='$cedula_postulante'";
+        $sqlactualizar="UPDATE usuario SET estado_productosOferta='$producto_oferta' WHERE cedula_usuario='$cedula_postulante'";
         $sqlproducto_oferta=mysqli_query($conn_registro,$sqlactualizar);
 
         $sqlcalificacion = "INSERT INTO producto_oferta  (usuario_id_oferta,cedula_postulante_oferta,

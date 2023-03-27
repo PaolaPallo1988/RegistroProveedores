@@ -27,7 +27,6 @@ $row = mysqli_fetch_array($result);
     <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
     <!-- iCheck -->
     <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-
     <!-- bootstrap-progressbar -->
     <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
@@ -36,8 +35,6 @@ $row = mysqli_fetch_array($result);
     <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
-    <link href="../css/estilos.css" rel="stylesheet">
-
 </head>
 
 <body class="nav-md">
@@ -49,7 +46,6 @@ $row = mysqli_fetch_array($result);
                         <a href="postulante.php" class="site_title"><i class="fa fa-desktop"></i> <span> PROVEEDORES</span></a>
                     </div>
                     <div class="clearfix"></div>
-
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <figure class="full-box">
@@ -78,7 +74,7 @@ $row = mysqli_fetch_array($result);
                     <br><br><br>
                     <?php
                     $cedula_postulante = $row['cedula_usuario'];
-                    $sqlestado = "SELECT * FROM estado_formulario WHERE cedula_usuario_estado= '$cedula_postulante'";
+                    $sqlestado = "SELECT * FROM usuario WHERE cedula_usuario= '$cedula_postulante'";
                     $resultado = mysqli_query($conn_registro, $sqlestado);
                     if ($estado = mysqli_fetch_array($resultado)) {
                         if (($estado['estado_calificacion'] === '1') && ($estado['estado_productosOferta'] === '1')) {
@@ -165,68 +161,60 @@ $row = mysqli_fetch_array($result);
                 </div>
             </div>
             <!-- /top navigation -->
-
             <!-- page content -->
             <div class="right_col" role="main">
                 <!-- /top tiles -->
                 <div class="row">
                     <div class="col-md-12 col-sm-12 ">
-                        <center>
-                            <div class="dashboard_graph">
-                        </center>
-                        <div class="row x_title">
-                            <div style="background-color:#0A307C" class="container p-3 my-3 text-white">
-                                <div class="col-md-12">
-                                    <h3 align="center">DOCUMENTOS ESPECÍFICOS</h3>
+                        <div class="dashboard_graph">
+                            <div class="x_panel"><br>
+                                <div class="row x_title">
+                                    <div style="background-color:#0A307C" class="container p-3 my-3 text-white">
+                                        <div class="col-md-12">
+                                            <h3 align="center">DOCUMENTOS ESPECÍFICOS</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <div class="interlineado" style="color:#060505;">
+                                        <ul>
+                                            <h2>➥ Persona Natural Ecuatoriano</br></h2>
+                                            <h2>➥ Persona Natural Extranjera Domiciliada en Ecuador</br></h2>
+                                        </ul>
+                                    </div>
+                                    <div> <embed src="../files/personas_naturales_ecuatorianos_o_extranjeros_domiciliados_ecuador.pdf" type="application/pdf" width="100%" height="650px" /></div><br>
+                                </div>
+                                <div class="col-md-6 col-sm-6 ">
+                                    <div class="interlineado" style="color:#060505;">
+                                        <ul>
+                                            <h2>➥ Persona Jurídica Ecuatoriano</br></h2>
+                                            <h2>➥ Persona Jurídica Extranjera Domiciliada en Ecuador</br></h2>
+                                        </ul>
+                                    </div>
+                                    <div> <embed src="../files/personas_juridicas_nacionales_o_extranjeras_domiciliada_ecuador.pdf" type="application/pdf" width="100%" height="650px" /></div><br>
+                                </div>
+                                <div class="col-md-12 col-sm-12 "><br>
+                                    <center>
+                                        <div class="interlineado" style="color:#060505;">
+                                            <ul>
+                                                <h2>➥ Persona Jurídica Extranjera NO Domiciliada en Ecuador</br></h2>
+                                            </ul>
+                                        </div>
+                                        <div> <embed src="../files/personas_juridicas_extranjera_no_domiciliada_ecuador.pdf" type="application/pdf" width="950px" height="650px" /></div><br>
+                                    </center>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 ">
-                            <div class="interlineado" style="color:#060505;">
-                                <ul>
-                                    <h2>➥ Persona Natural Ecuatoriano</br></h2>
-                                    <h2>➥ Persona Natural Extranjera Domiciliada en Ecuador</br></h2>
-                                </ul>
-                            </div>
-                            <div> <embed src="../files/personas_naturales_ecuatorianos_o_extranjeros_domiciliados_ecuador.pdf" type="application/pdf" width="100%" height="650px" /></div><br>
-                        </div>
-                        <div class="col-md-6 col-sm-6 ">
-                            <div class="interlineado" style="color:#060505;">
-                                <ul>
-                                    <h2>➥ Persona Jurídica Ecuatoriano</br></h2>
-                                    <h2>➥ Persona Jurídica Extranjera Domiciliada en Ecuador</br></h2>
-                                </ul>
-                            </div>
-                            <div> <embed src="../files/personas_juridicas_nacionales_o_extranjeras_domiciliada_ecuador.pdf" type="application/pdf" width="100%" height="650px" /></div><br>
-                        </div>
-                        <div class="col-md-12 col-sm-12 "><br>
-                            <center>
-                                <div class="interlineado" style="color:#060505;">
-                                    <ul>
-                                        <h2>➥ Persona Jurídica Extranjera NO Domiciliada en Ecuador</br></h2>
-                                    </ul>
-                                </div>
-                                <div> <embed src="../files/personas_juridicas_extranjera_no_domiciliada_ecuador.pdf" type="application/pdf" width="950px" height="650px" /></div><br>
-                            </center>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- /page content -->
+            <!-- footer content -->
+            <?php include('../cabeceras/pie_pagina.php'); ?>
+            <!-- /footer content -->
         </div>
-
     </div>
-    <!-- /page content -->
-
-    <!-- footer content -->
-    <footer>
-        <div class="pull-right">
-            SISTEMA CALIFICACIÓN DE PROVEEDORES - DTI - <a href="https://www.defensa.gob.ec/">MDN</a>
-        </div>
-        <div class="clearfix"></div>
-    </footer>
-    <!-- /footer content -->
-    </div>
-    </div>
+    
     <!-- SWEETALERT -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- SEGURIDAD -->

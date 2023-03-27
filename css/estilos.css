@@ -1,11 +1,11 @@
-* {
+*/* {
 	box-sizing: border-box;
 }
 
-body {
-	font-family: 'Roboto', sans-serif;
-	background: #E5E5E5;
-}
+ body { 
+	 font-family: 'Roboto', sans-serif; 
+	 background: #E5E5E5; 
+ } 
 
 main {
 	max-width: 800px;
@@ -18,7 +18,7 @@ main {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	gap: 20px;
-}
+}*/
 
 .formulario__label {
 	display: block;
@@ -238,21 +238,7 @@ main {
 
 
 
-  /*INTERLINIADO */
 
-	  .interlineado {
-		  line-height: 150%;
-	  }
-
-	  .icon-image {
-		  float: left;
-		  background: url(img/icon.jpg) no-repeat;
-		  /* Aquí agrega una imagen de 20x20*/
-		  width: 20px;
-		  /* El ancho y alto son las misma proporciones que la imagen*/
-		  height: 20px;
-		  margin-left: 10px;
-	  }
  
 
 

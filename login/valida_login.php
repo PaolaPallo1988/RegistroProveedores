@@ -1,14 +1,11 @@
 <?php
 session_start();
-if (array_key_exists('intentos', $_SESSION)) {
-    $_SESSION['intentos'] = $_SESSION['intentos'] + 1;
-} else {
-    $_SESSION['intentos'] = 0;
-}
 include('conexion/conexion.php');
 
 
+
 if (isset($_POST['login'])) {
+    
     $username = trim(mysqli_real_escape_string($conn_registro, $_POST['cedula_usuario']));
     $password = trim($_POST['password_usuario']);
 
@@ -17,7 +14,7 @@ if (isset($_POST['login'])) {
     $numRows = mysqli_num_rows($rs);
 
 
-    if ($numRows >= 1) {
+    if ($numRows >= 1) {       
         $row = mysqli_fetch_assoc($rs);
         if (password_verify($password, $row['password_usuario'])) {
 
@@ -28,7 +25,6 @@ if (isset($_POST['login'])) {
             $_SESSION['correo_usuario']         = $row['correo_usuario'];
             $_SESSION['perfil_id']              = $row['perfil_id'];
             $_SESSION['estado_id']              = $row['estado_id'];
-
             /// Se manejan las sesiones
             if ($_SESSION['perfil_id'] == 1 && $_SESSION['estado_id'] == 1) {
                 header('location: vistas/principal.php');
@@ -103,4 +99,10 @@ if (isset($_POST['login'])) {
                             </script>";
         }
     }
+
+
+
+
+
+    
 }

@@ -2,6 +2,7 @@
 if(window.history.replaceState){
 	window.history.replaceState(null,null,window.location.href)
 }
+//QUE NO SE RECARGE LA PAGINA AL HACER F5
 
 
     $(document).ready(function() {

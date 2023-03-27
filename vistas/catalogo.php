@@ -35,7 +35,6 @@ $row = mysqli_fetch_array($result);
     <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
-    <link href="../css/estilos.css" rel="stylesheet">
 </head>
 
 <body class="nav-md">
@@ -76,7 +75,7 @@ $row = mysqli_fetch_array($result);
                     <br><br><br>
                     <?php
                     $cedula_postulante = $row['cedula_usuario'];
-                    $sqlestado = "SELECT * FROM estado_formulario WHERE cedula_usuario_estado= '$cedula_postulante'";
+                    $sqlestado = "SELECT * FROM usuario WHERE cedula_usuario= '$cedula_postulante'";
                     $resultado = mysqli_query($conn_registro, $sqlestado);
                     if ($estado = mysqli_fetch_array($resultado)) {
                         if (($estado['estado_calificacion'] === '1') && ($estado['estado_productosOferta'] === '1')) {
@@ -188,17 +187,12 @@ $row = mysqli_fetch_array($result);
                 </div>
             </div>
         </div>
-
     </div>
     <!-- /page content -->
 
     <!-- footer content -->
-    <footer>
-        <div class="pull-right">
-            SISTEMA CALIFICACIÓN DE PROVEEDORES - DTI - <a href="https://www.defensa.gob.ec/">MDN</a>
-        </div>
-        <div class="clearfix"></div>
-    </footer>
+    <?php include('../cabeceras/pie_pagina.php'); ?>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <!-- /footer content -->
     </div>
     </div>

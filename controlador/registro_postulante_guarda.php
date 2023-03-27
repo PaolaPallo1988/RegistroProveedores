@@ -35,12 +35,9 @@ if (isset($_POST['guardapostulante'])) {
     $sqlpostulanteImagen = "INSERT INTO usuario  (nombre_usuario, cedula_usuario, perfil_id, estado_id, correo_usuario, password_usuario,imagen) VALUES 
         ('" . $nombre_postulante . "','" . $ruc_postulante . "','" . $perfil_id . "','" . $estado_id . "','" . $correo_postulante . "','" . $hashPassword . "','" . $nombre_imagen . "')";
 
-    $sqlpostulante = "INSERT INTO usuario  (nombre_usuario, cedula_usuario, perfil_id, estado_id, correo_usuario, password_usuario) VALUES 
-        ('" . $nombre_postulante . "','" . $ruc_postulante . "','" . $perfil_id . "','" . $estado_id . "','" . $correo_postulante . "','" . $hashPassword . "')";
+    $sqlpostulante = "INSERT INTO usuario  (nombre_usuario, cedula_usuario, perfil_id, estado_id, correo_usuario, password_usuario,estado_calificacion, estado_productosOferta) VALUES 
+        ('" . $nombre_postulante . "','" . $ruc_postulante . "','" . $perfil_id . "','" . $estado_id . "','" . $correo_postulante . "','" . $hashPassword . "','" . $estado_calificacion . "','" . $estado_productosOferta . "')";
 
-    $sqlestado = "INSERT INTO estado_formulario (cedula_usuario_estado,estado_calificacion, estado_productosOferta) VALUES 
-                ('" . $ruc_postulante . "','" . $estado_calificacion . "','" . $estado_productosOferta . "')";
-    $resultado = mysqli_query($conn_registro, $sqlestado);
 
     $verficarruc = mysqli_query($conn_registro, "SELECT * FROM usuario WHERE cedula_usuario = '$ruc_postulante'");
     $verficarusuario = mysqli_query($conn_registro, "SELECT * FROM usuario WHERE nombre_usuario = '$nombre_postulante'");
