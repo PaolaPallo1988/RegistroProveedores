@@ -29,6 +29,27 @@ if (isset($_POST['desbloquear_cuenta'])) {
         $id = $registrousu['id_usuario'];
 
         if (count($errors) == 0) {
+
+            //    SACAR LA IP DE LA MAQUINA 
+            if (getenv('HTTP_CLIENT_IP')) {
+                $ip = getenv('HTTP_CLIENT-IP');
+            } elseif (getenv('HTTP_X_FORWARDED_FOR')) {
+                $ip = getenv('HTTP_X_FORWARDED_FOR');
+            } elseif (getenv('HTTP_X_FORWARDED')) {
+                $ip = getenv('HTTP_X_FORWARDED');
+            } elseif (getenv('HTTP_FORWARDED_FOR')) {
+                $ip = getenv('HTTP_FORWARDED_FOR');
+            } elseif (getenv('HTTP_FORWARDED')) {
+                $ip = getenv('HTTP_FORWARDED');
+            } else {
+                $ip = $_SERVER['REMOTE_ADDR'];
+            }
+            //    SACAR LA IP DE LA MAQUINA 
+            $fecha = date("Y-m-d h:i:s");
+            echo $fecha;
+
+
+
             // almacenar el token en la tabla de la base de datos de restablecimiento de contraseña contra el correo electrónico del usuario
             $sql = "INSERT INTO desbloqueo_cuenta (usuario_idDesbloqueo, email_desbloqueo, token_desbloqueo) VALUES ('$id','$email', '$token')";
             $query = mysqli_query($conn_registro, $sql);

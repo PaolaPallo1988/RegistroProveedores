@@ -35,7 +35,6 @@ if (isset($_POST['reset_password'])) {
         $id = $registrousu['id_usuario'];
 
         if (count($errors) == 0) {
-
             //    SACAR LA IP DE LA MAQUINA 
             if (getenv('HTTP_CLIENT_IP')) {
                 $ip = getenv('HTTP_CLIENT-IP');
@@ -51,10 +50,8 @@ if (isset($_POST['reset_password'])) {
                 $ip = $_SERVER['REMOTE_ADDR'];
             }
             //    SACAR LA IP DE LA MAQUINA 
-            $fecha = date("Y-m-d");
+            $fecha = date("Y-m-d h:i:s");
             echo $fecha;
-
-
 
             // almacenar el token en la tabla de la base de datos de restablecimiento de contraseña contra el correo electrónico del usuario
             $sql = "INSERT INTO password_reset (usuario_id_passreset,email_passreset, token_passreset) VALUES ('$id','$email', '$token')";
