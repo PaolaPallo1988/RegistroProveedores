@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>DESBLOQUEO DE CUENTA</title>
+    <title>Sistema de Calificación de Proveedores | MDN</title>
 
     <link rel="stylesheet" href="../login/css/estilos.css">
     <link rel="stylesheet" href="../login/css/font-awesome.css">

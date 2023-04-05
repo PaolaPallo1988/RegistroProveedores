@@ -13,7 +13,7 @@ $row = mysqli_fetch_array($result);
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Formulario | Ingreso Usuario </title>
+    <title>Sistema de Calificación de Proveedores | MDN </title>
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -47,7 +47,6 @@ $row = mysqli_fetch_array($result);
     <!--- FORMATO DE BOTONES --->
     <link href="../css/botones.css" rel="stylesheet">
 
-
 </head>
 
 <body class="nav-md">
@@ -63,13 +62,13 @@ $row = mysqli_fetch_array($result);
                     <div class="profile clearfix">
                         <figure class="full-box">
                             <?php
-                            $nombre_postulante=$row['nombre_usuario'];
+                            $nombre_postulante = $row['nombre_usuario'];
                             $nombre_imagen = "../Fotos_Perfil/$nombre_postulante/$nombre_postulante.JPG";
-                            if (file_exists($nombre_imagen)){
+                            if (file_exists($nombre_imagen)) {
                             ?>
                                 <div align="center"><img src="../Fotos_Perfil/<?php echo $row['nombre_usuario'] ?>/<?php echo $row['nombre_usuario']; ?>.JPG" alt="..." class="img-circle profile_img"></div><br>
-                            <?php        
-                            }else{
+                            <?php
+                            } else {
                             ?>
                                 <div align="center"><img src="../images/AdminLTELogo.png" alt="..." class="img-circle profile_img"></div><br>
                             <?php
@@ -93,7 +92,7 @@ $row = mysqli_fetch_array($result);
                 <div class="nav_menu">
                     <div class="nav toggle">
                         <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-                    </div>  
+                    </div>
                     <nav class="nav navbar-nav">
                         <ul class=" navbar-right">
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
@@ -176,8 +175,8 @@ $row = mysqli_fetch_array($result);
                                 <div class="container"><br><br>
                                     <font size="3" face="arial">
                                         <div class="row">
-                                            <div class='col-sm-6'  >
-                                            <FONT style="color:black" size=4><b>NOMBRES *</b></FONT>
+                                            <div class='col-sm-6'>
+                                                <FONT style="color:black" size=4><b>NOMBRES *</b></FONT>
                                                 <div class="form-group">
                                                     <div class='input-group date' id='myDatepicker'>
                                                         <input type='text' autocomplete="off" class="form-control" required name="nombre_usuario" id="nombre_usuario" onkeyup="javascript:this.value=this.value.toUpperCase();" onkeypress="return valideKeyLetras(event);" />
@@ -189,7 +188,7 @@ $row = mysqli_fetch_array($result);
                                             </div>
 
                                             <div class='col-sm-6'>
-                                            <FONT style="color:black" size=4><b>APELLIDOS *</b></FONT>
+                                                <FONT style="color:black" size=4><b>APELLIDOS *</b></FONT>
                                                 <div class="form-group">
                                                     <div class='input-group date'>
                                                         <input type='text' autocomplete="off" class="form-control" required name="apellido_usuario" id="apellido_usuario" onkeyup="javascript:this.value=this.value.toUpperCase();" onkeypress="return valideKeyLetras(event);" />
@@ -202,7 +201,7 @@ $row = mysqli_fetch_array($result);
                                         </div>
                                         <div class="row">
                                             <div class='col-sm-6'><br>
-                                            <FONT style="color:black" size=4><b>CORREO *</b></FONT>
+                                                <FONT style="color:black" size=4><b>CORREO *</b></FONT>
                                                 <div class="form-group">
                                                     <div class='input-group date'>
                                                         <input type='text' autocomplete="off" class="form-control" required name="correo_usuario" id="correo_usuario" style="text-transform:lowercase;" onkeyup="javascript:this.value=this.value.toLowerCase();" onkeypress="return valideKeyEmail(event);" />
@@ -214,7 +213,7 @@ $row = mysqli_fetch_array($result);
                                             </div>
 
                                             <div class='col-sm-6'><br>
-                                            <FONT style="color:black" size=4><b>CÉDULA *</b></FONT>
+                                                <FONT style="color:black" size=4><b>CÉDULA *</b></FONT>
                                                 <div class="form-group">
                                                     <div class='input-group date'>
                                                         <input type='text' autocomplete="off" class="form-control" required name="cedula_usuario" id="cedula_usuario" onkeypress="return valideKey(event);" minlength="10" maxlength="10" />
@@ -228,7 +227,7 @@ $row = mysqli_fetch_array($result);
 
                                         <div class="row">
                                             <div class='col-sm-6'><br>
-                                            <FONT style="color:black" size=4><b>PASSWORD *</b></FONT> 
+                                                <FONT style="color:black" size=4><b>PASSWORD *</b></FONT>
                                                 <div class="form-group">
                                                     <div class='input-group date'>
                                                         <input type='password' autocomplete="off" class="form-control" name="password_usuario" id="password_usuario" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="La contraseña debe tener 8 caracteres, incluida 1 letra mayúscula, y caracteres numéricos" />
@@ -239,7 +238,7 @@ $row = mysqli_fetch_array($result);
                                                 </div>
                                             </div>
                                             <div class='col-sm-6'><br>
-                                            <FONT style="color:black" size=4><b>PERFIL USUARIO *</b></FONT>  
+                                                <FONT style="color:black" size=4><b>PERFIL USUARIO *</b></FONT>
                                                 <div class="form-group">
                                                     <select class="form-control" required name="perfil_id" id="perfil_id">
                                                         <option value="">SELECCIONAR...</option>
@@ -251,7 +250,7 @@ $row = mysqli_fetch_array($result);
                                             </div>
                                             <div class="row">
                                                 <div class='col-sm-12'><br>
-                                                <FONT style="color:black" size=4><b>FOTO PERSONAL ADMINISTRATIVO * </b></FONT>  
+                                                    <FONT style="color:black" size=4><b>FOTO PERSONAL ADMINISTRATIVO * </b></FONT>
                                                     <div class="form-group">
                                                         <div class='input-group date'>
                                                             <h6> <input class='form-control' type="file" name="imagen" accept="image/*" id="imagen" required></br>
@@ -289,7 +288,7 @@ $row = mysqli_fetch_array($result);
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="card-box table-responsive">
-                                                    <table id="datatable" class="table table-striped table-bordered" style="width:100%">
+                                                    <table id="example" class="table table-striped table-bordered" style="width:100%">
                                                         <thead>
                                                             <tr>
                                                                 <th>#</th>
@@ -319,9 +318,9 @@ $row = mysqli_fetch_array($result);
                                                                         <td>
                                                                             <?php echo $usuarios['nombre_usuario'] ?>
                                                                         </td>
-                                                                            <td>
-                                                                                <?php echo $usuarios['apellido_usuario'] ?>
-                                                                            </td>
+                                                                        <td>
+                                                                            <?php echo $usuarios['apellido_usuario'] ?>
+                                                                        </td>
                                                                         <td>
                                                                             <?php echo $usuarios['cedula_usuario'] ?>
                                                                         </td>
@@ -382,25 +381,13 @@ $row = mysqli_fetch_array($result);
                                         </ul>
                                         <div class="clearfix"></div>
                                     </div>
-                                    <!--------------------- BUSCAR EN A TABLA  ---------------------------------------->
-                                    <div id="datatable_wrapper" class="dataTables_wrapper container-fluid dt-boostrap no-footer"><br>
-                                        <div class="row">
-                                            <div class="col-sm-6">
-                                                <div id="datatable_filter" class="dataTables_filter">
-                                                    <label>
-                                                        Buscar:
-                                                        <input type="text" id="search" name="search" class="form-control input-sm" placeholder="Buscar...">
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                     <!--------------------- BUSCAR EN A TABLA  ---------------------------------------->
                                     <div class="x_content">
                                         <div class="row">
                                             <div class="col-sm-12">
                                                 <div class="card-box table-responsive">
-                                                    <table id="table" class="table table-striped table-bordered" style="width:100%">
+                                                    <table id="datatable" class="table table-striped table-bordered" style="width:100%">
                                                         <thead>
                                                             <tr>
                                                                 <th>#</th>
@@ -462,30 +449,6 @@ $row = mysqli_fetch_array($result);
                                                         </tbody>
                                                     </table>
                                                     <!------------------------------------------- CONSULTA DE POSTULANTES INGRESADOS --------------------------------------------->
-
-                                                    <!----------------------------------------------- PIE DE PAGINA DE LA TABLE ----->
-                                                    <div class="row">
-                                                        <div class="col-sm-5">
-                                                            <div class="dataTablesInfo" id="datatable_info" role="status" aria aria-live="polite">Showing 1 to 3 of 3 entries</div>
-                                                        </div>
-                                                        <div class="col-sm-7">
-                                                            <div class="dataTables_paginate paging_simple-numbers" id="datatable_paginate">
-                                                                <ul class="pagination">
-                                                                    <li class="paginate_button previous disable" id="datatable_previous">
-                                                                        <a href="#" aria-controls="datatable" data-dt-idx="0" tabindex="0">Previous</a>
-                                                                    </li>
-                                                                    <li class="paginate_button active">
-                                                                        <a href="#" aria-controls="datatable" data-dt-idx="1" tabindex="0">1</a>
-                                                                    </li>
-                                                                    <li class="paginate_button next disabled" id="datatable_next">
-                                                                        <a href="#" aria-controls="datatable" data-dt-idx="2" tabindex="0">Next</a>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <!----------------------------------------------- PIE DE PAGINA DE LA TABLE ----->
-
                                                 </div>
                                             </div>
                                         </div>

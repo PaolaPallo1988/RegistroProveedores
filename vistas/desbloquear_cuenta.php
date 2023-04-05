@@ -1,14 +1,15 @@
 <?php
-require ('../conexion/conexion.php');
+require('../conexion/conexion.php');
 
 ?>
 
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
-    <title>Inicio de Sesión</title>
+    <title>Sistema de Calificación de Proveedores | MDN</title>
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Font-->
@@ -31,7 +32,7 @@ require ('../conexion/conexion.php');
                 <?php
                 include('../controlador/envia_correoDesbloqueo.php');
                 ?>
-                <form class="form-detail" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>" >
+                <form class="form-detail" method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>">
                     <div class="tabcontent" id="sign-in">
                         <center>
                             <div class="container">
@@ -67,9 +68,8 @@ require ('../conexion/conexion.php');
             </div>
         </div>
     </div>
-</body>
-
-
+    <!-- SEGURIDAD QUE LA PAGINA SE CIERRE EN 20 MINUTOS -->
+    <script src="../js/formularios/seguridad.js"></script>
 </body>
 <!-- This templates was made by Colorlib (https://colorlib.com) -->
 

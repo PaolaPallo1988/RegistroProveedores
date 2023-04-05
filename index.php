@@ -51,7 +51,6 @@
                                 <div>
                                     <a style="color:#0B0B0B" ; text-align="left" href="olvidaste_contrasena.php">Olvidó su contraseña?</a>
                                 </div><br>
-
                             </label>
                         </div>
                         <center>
@@ -61,26 +60,24 @@
                             </div>
                         </center>
                         <div>
-                            <a style="color:#0B0B0B" ; href="vistas/desbloquear_cuenta.php" >DESBLOQUEAR CUENTA</a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; 
-                            <a text-align="left" ; style="color:#0B0B0B"; href="vistas/contacto_ciudadano.php">CONTACTO CIUDADANO</a>
+                            <a style="color:#0B0B0B" ; href="vistas/desbloquear_cuenta.php">DESBLOQUEAR CUENTA</a>&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;
+                            <a text-align="left" ; style="color:#0B0B0B" ; href="vistas/contacto_ciudadano.php">CONTACTO CIUDADANO</a>
                         </div><br>
                         <div class="form-group">
                             <div class="alert alert-warning">
                                 <center> Dirección de Tecnologias de la Información y Comunicación</center>
-                                <br>
                                 <center>Ministerio de Defensa Nacional-2022</center>
                             </div>
                         </div>
                     </div>
                 </form>
             </div>
-        
-
         </div>
     </div>
     <script src="js/formularios/formulario_ login.js"></script>
+    <!-- SEGURIDAD -->
+    <script src="js/formularios/seguridad.js"></script>
 </body>
-
 <!-- This templates was made by Colorlib (https://colorlib.com) -->
 
 </html>

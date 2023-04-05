@@ -2,22 +2,16 @@
 session_start();
 include('conexion/conexion.php');
 
-
-
 if (isset($_POST['login'])) {
-    
     $username = trim(mysqli_real_escape_string($conn_registro, $_POST['cedula_usuario']));
     $password = trim($_POST['password_usuario']);
-
     $sql = "SELECT * FROM usuario WHERE  cedula_usuario = '" . $username . "'";
     $rs = mysqli_query($conn_registro, $sql);
     $numRows = mysqli_num_rows($rs);
 
-
     if ($numRows >= 1) {       
         $row = mysqli_fetch_assoc($rs);
         if (password_verify($password, $row['password_usuario'])) {
-
             $_SESSION['id_usuario']             = $row['id_usuario'];
             $_SESSION['nombre_usuario']         = $row['nombre_usuario'];
             $_SESSION['apellido_usuario']       = $row['apellido_usuario'];
@@ -25,7 +19,6 @@ if (isset($_POST['login'])) {
             $_SESSION['correo_usuario']         = $row['correo_usuario'];
             $_SESSION['perfil_id']              = $row['perfil_id'];
             $_SESSION['estado_id']              = $row['estado_id'];
-            
             /// Se manejan las sesiones
             if ($_SESSION['perfil_id'] == 1 && $_SESSION['estado_id'] == 1) {
                 header('location: vistas/principal.php');
@@ -316,7 +309,6 @@ if (isset($_POST['login'])) {
                 }   
             }
         } else {
-
             echo "<script>          
             Swal.fire({
                 icon: 'error',
@@ -329,7 +321,6 @@ if (isset($_POST['login'])) {
                 });
                     </script>";
             var_dump($_SESSION['intentos']);
-
             if ($_SESSION['intentos'] > 3) {
                 $sqlactualiza = "UPDATE usuario SET estado_id = '2' WHERE cedula_usuario = '" . $username . "'";
                 $actualiza = mysqli_query($conn_registro, $sqlactualiza);
@@ -376,10 +367,4 @@ if (isset($_POST['login'])) {
                             </script>";
         }
     }
-
-
-
-
-
-    
 }

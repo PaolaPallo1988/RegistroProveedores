@@ -9,7 +9,7 @@ $token_enlace = !empty($_GET['token']) ? $_GET['token'] : null;
 
 <head>
     <meta charset="utf-8">
-    <title>Inicio de Sessión</title>
+    <title>Sistema de Calificación de Proveedores | MDN</title>
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <!-- Font-->

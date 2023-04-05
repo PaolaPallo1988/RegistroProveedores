@@ -8,7 +8,7 @@ include "../conexion/conexion.php";
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
-  <title>Contacto Ciudadano</title>
+  <title>Sistema de Calificación de Proveedores | MDN</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/nicepage.css" media="screen">
@@ -123,8 +123,8 @@ include "../conexion/conexion.php";
                 <h3 class="u-text u-text-body-color u-text-default u-text-7">Contáctanos</h3>
                 <div class="u-form u-form-1">
                   <form method="POST" action="<?php echo $_SERVER['PHP_SELF'] ?>" class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form">
-                    <?php include("../controlador/guarda_contactoCiudadano.php"); 
-                        ?>    
+                    <?php include("../controlador/guarda_contactoCiudadano.php");
+                    ?>
                     <div class="u-form-group u-form-name">
                       <label class="u-label u-text-body-alt-color u-label-1">NOMBRE / RAZÓN SOCIAL</label>
                       <input type="text" placeholder="Nombre o la Razón Social" autocomplete="off" id="nombre_contactoCiudadano" name="nombre_contactoCiudadano" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-text-white u-input-4" onkeyup="javascript:this.value=this.value.toUpperCase();" onkeypress="return valideKeyNombre(event);" style="text-transform:uppercase;" required>
@@ -138,7 +138,7 @@ include "../conexion/conexion.php";
                       <input type="email" placeholder="correo electrónico " autocomplete="off" id="correo_contactoCiudadano" name="correo_contactoCiudadano" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-text-white u-input-4" onkeyup="javascript:this.value=this.value.toLowerCase();" style="text-transform:lowercase;" maxlength="40" required>
                     </div>
                     <div class="u-form-group u-form-name">
-                    <label class="u-label u-text-body-alt-color u-label-3">REQUERIMIENTO</label>
+                      <label class="u-label u-text-body-alt-color u-label-3">REQUERIMIENTO</label>
                       <select class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-text-white u-input-4" name="tipo_contactoCiudadano" id="tipo_contactoCiudadano" required>
                         <option style="background-color:#0B305F;" value="0"> SELECCIONAR...</option>
                         <option style="background-color:#0B305F;" value="PREGUNTA">PREGUNTA</option>
@@ -176,19 +176,12 @@ include "../conexion/conexion.php";
           </div>
         </div>
       </div>
-
-
     </div>
-
     <!-- footer content -->
-    <footer>
-      <div class="pull-right">
-        SISTEMA CALIFICACIÓN DE PROVEEDORES - DTI - <a href="https://www.defensa.gob.ec/">MDN</a>
-      </div>
-      <div class="clearfix"></div>
-    </footer>
+    <?php include('../cabeceras/pie_pagina.php'); ?>
     <!-- /footer content -->
   </section>
+      <!-- SEGURIDAD -->
+      <script src="../js/formularios/seguridad.js"></script>
 </body>
-
 </html>

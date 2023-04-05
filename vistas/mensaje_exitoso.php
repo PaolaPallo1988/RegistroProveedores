@@ -15,7 +15,7 @@ $row = mysqli_fetch_array($result);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../images/favicon.ico" type="image/ico" />
-    <title>SISTEMA DE CALIFICACIÓN DE PROVEEDORES | MDN </title>
+    <title>Sistema de Calificación de Proveedores | MDN </title>
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->

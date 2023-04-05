@@ -94,6 +94,8 @@ $token_enlace = !empty($_GET['token']) ? $_GET['token'] : null;
             </div>
         </div>
     </div>
+    <!-- SEGURIDAD -->
+    <script src="js/formularios/seguridad.js"></script>
 </body>
 
 </html>

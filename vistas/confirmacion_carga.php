@@ -15,7 +15,7 @@ $row = mysqli_fetch_array($result);
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Formulario | Ingreso Usuario </title>
+    <title>Sistema de Calificación de Proveedores | MDN </title>
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -56,9 +56,7 @@ $row = mysqli_fetch_array($result);
                     <div class="navbar nav_title" style="border: 0;">
                         <a href="postulante.php" class="site_title"><i class="fa fa-desktop"></i> <span>PROVEEDORES</span></a>
                     </div>
-
                     <div class="clearfix"></div>
-
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <figure class="full-box">
@@ -87,7 +85,7 @@ $row = mysqli_fetch_array($result);
                     <br><br><br>
                     <?php
                     $cedula_postulante = $row['cedula_usuario'];
-                    $sqlestado = "SELECT * FROM estado_formulario WHERE cedula_usuario_estado= '$cedula_postulante'";
+                    $sqlestado = "SELECT * FROM usuario WHERE cedula_usuario= '$cedula_postulante'";
                     $resultado = mysqli_query($conn_registro, $sqlestado);
                     if ($estado = mysqli_fetch_array($resultado)) {
                         if (($estado['estado_calificacion'] === '1') && ($estado['estado_productosOferta'] === '1')) {
@@ -114,20 +112,33 @@ $row = mysqli_fetch_array($result);
                     <nav class="nav navbar-nav">
                         <ul class=" navbar-right">
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
-                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="../Fotos_Perfil/<?php echo $row['nombre_usuario'] ?>/<?php echo $row['nombre_usuario']; ?>.JPG" alt=""><?php echo  $row['nombre_usuario'] . " " . $row['apellido_usuario']; ?>
-                                </a>
+                                <?php
+                                $nombre_postulante = $row['nombre_usuario'];
+                                $nombre_imagen = "../Fotos_Perfil/$nombre_postulante/$nombre_postulante.JPG";
+                                if (file_exists($nombre_imagen)) {
+                                ?>
+                                    <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                                        <img src="../Fotos_Perfil/<?php echo $row['nombre_usuario'] ?>/<?php echo $row['nombre_usuario']; ?>.JPG" alt=""><?php echo  $row['nombre_usuario'] . " " . $row['apellido_usuario']; ?>
+                                    </a>
+                                <?php
+                                } else {
+                                ?>
+                                    <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                                        <img src="../images/AdminLTELogo.png" alt=""><?php echo  $row['nombre_usuario'] . " " . $row['apellido_usuario']; ?>
+                                    </a>
+                                <?php
+                                }
+                                ?>
                                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="javascript:;"> Profile</a>
+                                    <a class="dropdown-item" href="javascript:;"> Perfiles</a>
                                     <a class="dropdown-item" href="javascript:;">
                                         <span class="badge bg-red pull-right">50%</span>
-                                        <span>Settings</span>
+                                        <span>Ajustes</span>
                                     </a>
                                     <a class="dropdown-item" href="javascript:;">Ayuda</a>
-                                    <a class="dropdown-item" href="../login/logout.php"><i class="fa fa-sign-out pull-right"></i> Salir</a>
+                                    <a class="dropdown-item" id="salir" href="../login/logout.php"><i class="fa fa-sign-out pull-right"></i> Salir</a>
                                 </div>
                             </li>
-
                             <li role="presentation" class="nav-item dropdown open">
                                 <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
                                     <i class="fa fa-envelope-o"></i>
@@ -136,20 +147,20 @@ $row = mysqli_fetch_array($result);
                                 <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
                                     <li class="nav-item">
                                         <a class="dropdown-item">
-                                            <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                            <span class="image"><img src="../Fotos_Perfil/<?php echo $row['nombre_usuario'] ?>/<?php echo $row['nombre_usuario']; ?>.JPG" alt="Profile Image" /></span>
                                             <span>
-                                                <span>John Smith</span>
-                                                <span class="time">3 mins ago</span>
+                                                <span><?php echo  $row['nombre_usuario'] . " " . $row['apellido_usuario']; ?></span>
+                                                <span class="time"> </span>
                                             </span>
                                             <span class="message">
-                                                Film festivals used to be do-or-die moments for movie makers. They were where...
+                                                No esta configurado...
                                             </span>
                                         </a>
                                     </li>
                                     <li class="nav-item">
                                         <div class="text-center">
                                             <a class="dropdown-item">
-                                                <strong>See All Alerts</strong>
+                                                <strong>Ver todas las alertas</strong>
                                                 <i class="fa fa-angle-right"></i>
                                             </a>
                                         </div>
@@ -191,6 +202,8 @@ $row = mysqli_fetch_array($result);
     <!-- footer content -->
     <?php include('../cabeceras/pie_pagina.php'); ?>
     <!-- /footer content -->
+    <!-- SEGURIDAD QUE LA PAGINA SE CIERRE EN 20 MINUTOS -->
+    <script src="../js/formularios/seguridad.js"></script>
     <!-- jQuery -->
     <script src="../vendors/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap -->

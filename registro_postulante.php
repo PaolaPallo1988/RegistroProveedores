@@ -51,7 +51,6 @@ include('conexion/conexion.php');
 	<script src='https://www.google.com/recaptcha/api.js?render=6Lebs4khAAAAADag0NOZim3fdOBwzHs1izzlTaD2'></script>
 	<!--- FORMATO DE BOTONES --->
 	<link href="css/botones.css" rel="stylesheet">
-
 </head>
 
 <body class="nav-md">
@@ -153,7 +152,7 @@ include('conexion/conexion.php');
 										<!--<input type='hidden' class="form-control" required name="estado_solicitud" id="estado_solicitud" value="1" readonly />-->
 										<input type='hidden' class="form-control" required name="estado_calificacion" id="estado_calificacion" value="1" readonly />
 										<input type='hidden' class="form-control" required name="estado_productosOferta" id="estado_productosOferta" value="1" readonly />
-	
+
 										<div class="container" style="color:#060505;">
 											<div class="row">
 												<div class='col-sm-6' id="grupo__nombre_postulante">
@@ -257,6 +256,8 @@ include('conexion/conexion.php');
 			<!-- /footer content -->
 		</div>
 	</div>
+	<!-- SEGURIDAD -->
+	<script src="js/formularios/seguridad.js"></script>
 	<!-- <Validación de Formulario con Javascript>-->
 	<script src="js/formularios/registro_postulante.js"></script>
 	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>

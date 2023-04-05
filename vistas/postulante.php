@@ -3,15 +3,11 @@ require('../conexion/conexion.php');
 require('../login/session.php');
 $result = mysqli_query($conn_registro, "SELECT * FROM usuario u INNER JOIN perfil p ON u.id_usuario='$session_id' AND p.id_perfil= u.perfil_id") or die('Error In Session');
 $row = mysqli_fetch_array($result);
-
-
-
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
@@ -19,7 +15,7 @@ $row = mysqli_fetch_array($result);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../images/favicon.ico" type="image/ico" />
-    <title>SISTEMA DE CALIFICACIÓN DE PROVEEDORES | MDN </title>
+    <title>Sistema de Calificación de Proveedores | MDN </title>
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -40,7 +36,6 @@ $row = mysqli_fetch_array($result);
     <link href="../css/botones.css" rel="stylesheet">
     <!-- Font Awesome5 KIT -->
     <script src="https://kit.fontawesome.com/62ca4df395.js" crossorigin="anonymous"></script>
-
 </head>
 
 <body class="nav-md">

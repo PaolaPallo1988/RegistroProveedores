@@ -40,3 +40,13 @@ if(window.history.replaceState){
 	window.history.replaceState(null,null,window.location.href)
 }
 //QUE NO SE RECARGE LA PAGINA AL HACER F5
+
+
+//QUE NO SE PUEDA UTILIZAR EL BOTON ATRAS DEL NAVEGADOR
+window.onload = function(){
+  window.location.hash="no-back-button";
+  window.location.hash="Again-No-back-button" //chrome
+  window.onhashchange=function(){
+    window.location.hash="no-back-button";
+  }
+}

@@ -2,12 +2,10 @@
 
 require('../conexion/conexion.php');
 require('../login/session.php');
-
 $result = mysqli_query($conn_registro, "SELECT * FROM usuario u INNER JOIN perfil p ON u.id_usuario='$session_id' AND p.id_perfil= u.perfil_id") or die('Error In Session');
 $row = mysqli_fetch_array($result);
-
-
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,9 +16,7 @@ $row = mysqli_fetch_array($result);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="../images/favicon.ico" type="image/ico" />
-
-    <title>SISTEMA DE CALIFICACIÓN DE PROVEEDORES | MDN </title>
-
+    <title>Sistema de Calificación de Proveedores | MDN </title>
     <!-- Bootstrap -->
     <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -35,7 +31,6 @@ $row = mysqli_fetch_array($result);
     <link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet" />
     <!-- bootstrap-daterangepicker -->
     <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
-
     <!-- Custom Theme Style -->
     <link href="../build/css/custom.min.css" rel="stylesheet">
 </head>
@@ -48,9 +43,7 @@ $row = mysqli_fetch_array($result);
                     <div class="navbar nav_title" style="border: 0;">
                         <a href="principal.php" class="site_title"><i class="fa fa-desktop"></i> <span>PROVEEDORES</span></a>
                     </div>
-
                     <div class="clearfix"></div>
-
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_pic">

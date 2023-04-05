@@ -8,14 +8,13 @@ $row = mysqli_fetch_array($result);
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Formulario | Ingreso Usuario </title>
+    <title>Sistema de Calificación de Proveedores | MDN </title>
     <!-- <Validación de Formulario con Javascript>-->
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -73,6 +72,7 @@ $row = mysqli_fetch_array($result);
     <link href="../css/botones.css" rel="stylesheet">
     <!-- INTERLINIADO -->
     <link href="../css/botones.css" rel="stylesheet">
+</head>
 
 <body class="nav-md">
     <div class="container body">
@@ -135,9 +135,23 @@ $row = mysqli_fetch_array($result);
                     <nav class="nav navbar-nav">
                         <ul class=" navbar-right">
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
-                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="../Fotos_Perfil/<?php echo $row['nombre_usuario'] ?>/<?php echo $row['nombre_usuario']; ?>.JPG" alt=""><?php echo  $row['nombre_usuario'] . " " . $row['apellido_usuario']; ?>
-                                </a>
+                                <?php
+                                $nombre_postulante = $row['nombre_usuario'];
+                                $nombre_imagen = "../Fotos_Perfil/$nombre_postulante/$nombre_postulante.JPG";
+                                if (file_exists($nombre_imagen)) {
+                                ?>
+                                    <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                                        <img src="../Fotos_Perfil/<?php echo $row['nombre_usuario'] ?>/<?php echo $row['nombre_usuario']; ?>.JPG" alt=""><?php echo  $row['nombre_usuario'] . " " . $row['apellido_usuario']; ?>
+                                    </a>
+                                <?php
+                                } else {
+                                ?>
+                                    <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
+                                        <img src="../images/AdminLTELogo.png" alt=""><?php echo  $row['nombre_usuario'] . " " . $row['apellido_usuario']; ?>
+                                    </a>
+                                <?php
+                                }
+                                ?>
                                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="javascript:;"> Perfiles</a>
                                     <a class="dropdown-item" href="javascript:;">
@@ -338,7 +352,6 @@ $row = mysqli_fetch_array($result);
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <!-- SWEETALERT -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

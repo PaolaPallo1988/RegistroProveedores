@@ -61,9 +61,8 @@
             </div>
         </div>
     </div>
-</body>
-
-
+    <!-- SEGURIDAD -->
+    <script src="js/formularios/seguridad.js"></script>
 </body>
 <!-- This templates was made by Colorlib (https://colorlib.com) -->
 
