@@ -99,42 +99,9 @@ $row = mysqli_fetch_array($result);
                                 }
                                 ?>
                                 <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="javascript:;"> Perfiles</a>
-                                    <a class="dropdown-item" href="javascript:;">
-                                        <span class="badge bg-red pull-right">50%</span>
-                                        <span>Ajustes</span>
-                                    </a>
                                     <a class="dropdown-item" href="javascript:;">Ayuda</a>
                                     <a class="dropdown-item" id="salir" href="../login/logout.php"><i class="fa fa-sign-out pull-right"></i> Salir</a>
                                 </div>
-                            </li>
-                            <li role="presentation" class="nav-item dropdown open">
-                                <a href="javascript:;" class="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown" aria-expanded="false">
-                                    <i class="fa fa-envelope-o"></i>
-                                    <span class="badge bg-green">6</span>
-                                </a>
-                                <ul class="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
-                                    <li class="nav-item">
-                                        <a class="dropdown-item">
-                                            <span class="image"><img src="../Fotos_Perfil/<?php echo $row['nombre_usuario'] ?>/<?php echo $row['nombre_usuario']; ?>.JPG" alt="Profile Image" /></span>
-                                            <span>
-                                                <span><?php echo  $row['nombre_usuario'] . " " . $row['apellido_usuario']; ?></span>
-                                                <span class="time"> </span>
-                                            </span>
-                                            <span class="message">
-                                                No esta configurado...
-                                            </span>
-                                        </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <div class="text-center">
-                                            <a class="dropdown-item">
-                                                <strong>Ver todas las alertas</strong>
-                                                <i class="fa fa-angle-right"></i>
-                                            </a>
-                                        </div>
-                                    </li>
-                                </ul>
                             </li>
                         </ul>
                     </nav>
@@ -151,41 +118,62 @@ $row = mysqli_fetch_array($result);
                             </div>
                             <div class="count">
                                 <?php
-                                $sql = "SELECT COUNT(*) total FROM usuario";
+                                $sql = "SELECT COUNT(*) total FROM usuario WHERE perfil_id = '4' ";
                                 $result = mysqli_query($conn_registro, $sql);
                                 $fila = mysqli_fetch_assoc($result);
                                 echo '' . ' ' . ' ' .  $fila['total'];
                                 ?>
-                            </div>
-                            <h3>Usuarios Ingresados</h3>
-                            <p>Lorem ipsum psdea itgum rixt.</p>
+                            </div><br>
+                            <h3>Postulantes</h3>
+                            <p></p>
                         </div>
                     </div>
                     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6  "><br><br>
                         <div class="tile-stats">
-                            <div class="icon"><i class="fa fa-slideshare"></i>
+                            <div class="icon"><i class="fa fa-users"></i>
                             </div>
-                            <div class="count">179</div>
-                            <h3>Postulantes Ingresados</h3>
-                            <p>Lorem ipsum psdea itgum rixt.</p>
+                            <div class="count">
+                                <?php
+                                $sql = "SELECT COUNT(*) total FROM usuario WHERE perfil_id = '2'";
+                                $result = mysqli_query($conn_registro, $sql);
+                                $fila = mysqli_fetch_assoc($result);
+                                echo '' . ' ' . ' ' .  $fila['total'];
+                                ?>
+                            </div><br>
+                            <h3>Secretario</h3>
+                            <p></p>
                         </div>
                     </div>
                     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6  "><br><br>
                         <div class="tile-stats">
-                            <div class="icon"><i class="fa fa-sort-amount-desc"></i>
+                            <div class="icon"><i class="fa fa-users"></i>
                             </div>
-                            <div class="count">179</div>
-                            <h3>New Sign ups</h3>
-                            <p>Lorem ipsum psdea itgum rixt.</p>
+                            <div class="count">
+                                <?php
+                                $sql = "SELECT COUNT(*) total FROM usuario WHERE perfil_id = '3'";
+                                $result = mysqli_query($conn_registro, $sql);
+                                $fila = mysqli_fetch_assoc($result);
+                                echo '' . ' ' . ' ' .  $fila['total'];
+                                ?>
+                            </div><br>
+                            <h3>Analista</h3>
+                            <p></p>
                         </div>
                     </div>
                     <div class="animated flipInY col-lg-3 col-md-3 col-sm-6  "><br><br>
                         <div class="tile-stats">
-                            <div class="icon"><i class="fa fa-check-square-o"></i>
+                            <div class="icon"><i class="fa fa-users"></i>
                             </div>
-                            <div class="count">179</div>
-                            <h3>New Sign ups</h3>
-                            <p>Lorem ipsum psdea itgum rixt.</p>
+                            <div class="count">
+                                <?php
+                                $sql = "SELECT COUNT(*) total FROM usuario WHERE perfil_id = '1'";
+                                $result = mysqli_query($conn_registro, $sql);
+                                $fila = mysqli_fetch_assoc($result);
+                                echo '' . ' ' . ' ' .  $fila['total'];
+                                ?>
+                            </div><br>
+                            <h3>Administrador</h3>
+                            <p></p>
                         </div>
                     </div>
                 </div>
