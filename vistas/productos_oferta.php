@@ -186,7 +186,7 @@ $row = mysqli_fetch_array($result);
                                                     &nbsp; <input type="checkbox" id="check3" name="option1[]" value="SISTEMAS DE MANDO Y CONTROL DE CIBERDEFENSA">
                                                     <label class="text-body" for="check3"> &nbsp;&nbsp;SISTEMAS DE MANDO Y CONTROL DE CIBERDEFENSA </label></br>
                                                     &nbsp; <input type="checkbox" id="check4" name="option1[]" value="SISTEMAS DE ENTRETENIMIENTO EN CIBERDEFENSA">
-                                                    <label class="text-body" for="check4"> &nbsp;&nbsp;SISTEMAS DE ENTRETENIMIENTO EN CIBERDEFENSA (SIMULADOR)</label>
+                                                    <label class="text-body" for="check4"> &nbsp;&nbsp;SISTEMAS DE ENTRETENAMIENTO EN CIBERDEFENSA (SIMULADOR)</label>
                                                     </br><label style="color:#0A307C" for="comment">Especificar el bien a proveer si es necesario</label>
                                                     <textarea class="form-control" name="c4ivr_opt1" rows="5" onkeyup="javascript:this.value=this.value.toUpperCase();"> </textarea>
                                                 </div></br></br>
@@ -199,7 +199,7 @@ $row = mysqli_fetch_array($result);
                                                     &nbsp; <input type="checkbox" id="check7" name="option2[]" value="AVIONES DE ENTRENAMIENTO">
                                                     <label class="text-body" for="check7"> &nbsp;&nbsp;AVIONES DE ENTRENAMIENTO </label></br>
                                                     &nbsp; <input type="checkbox" id="check8" name="option2[]" value="AVIONES DE REABESTECIMIENTO EN VUELO">
-                                                    <label class="text-body" for="check8"> &nbsp;&nbsp;AVIONES DE REABESTECIMIENTO EN VUELO </label>
+                                                    <label class="text-body" for="check8"> &nbsp;&nbsp;AVIONES DE REABASTECIMIENTO EN VUELO </label>
                                                     </br><label for="comment">Especificar el bien a proveer si es necesario</label>
                                                     <textarea class="form-control" name="areonavefija_opt2" rows="5" onkeyup="javascript:this.value=this.value.toUpperCase();"> </textarea>
                                                 </div></br></br>
@@ -217,7 +217,9 @@ $row = mysqli_fetch_array($result);
                                                     &nbsp; <input type="checkbox" id="check11" name="option4[]" value="HELICÓPTEROS DE COMBATE">
                                                     <label class="text-body" for="check11"> &nbsp;&nbsp;HELICÓPTEROS DE COMBATE </label></br>
                                                     &nbsp; <input type="checkbox" id="check12" name="option4[]" value="HELICÓPTEROS MULTIPROPÓSITO">
-                                                    <label class="text-body" for="check12"> &nbsp;&nbsp;HELICÓPTEROS MULTIPROPÓSITO </label>
+                                                    <label class="text-body" for="check12"> &nbsp;&nbsp;HELICÓPTEROS MULTIPROPÓSITO </label><br>
+                                                    &nbsp; <input type="checkbox" id="check112" name="option4[]" value="HELICÓPTEROS MEDIANOS MULTIPROPÓSITO BIMOTOR">
+                                                    <label class="text-body" for="check112"> &nbsp;&nbsp;HELICÓPTEROS MEDIANOS MULTIPROPÓSITO BIMOTOR</label>
                                                     </br><label style="color:#0A307C" for="comment">Especificar el bien a proveer si es necesario</label>
                                                     <textarea class="form-control" name="aeronaverot_opt4" rows="5" onkeyup="javascript:this.value=this.value.toUpperCase();"> </textarea>
                                                 </div></br></br>
@@ -233,16 +235,21 @@ $row = mysqli_fetch_array($result);
                                                     <label class="text-body" for="check16"> &nbsp;&nbsp;MISILES Y BOMBAS GUIADAS Y DE PRECISIÓN </label></br>
                                                     &nbsp; <input type="checkbox" id="check17" name="option5[]" value="TORPEDOS">
                                                     <label class="text-body" for="check17"> &nbsp;&nbsp;TORPEDOS </label></br>
-                                                    &nbsp; <input type="checkbox" id="check18" name="option5[]" value="MUNICIONES (CALIBRE 7.62 mm, 9mm, 5.56mm) ">
-                                                    <label class="text-body" for="check18"> &nbsp;&nbsp;MUNICIONES (CALIBRE 7.62 mm, 9mm, 5.56mm) </label></br>
+                                                    &nbsp; <input type="checkbox" id="check18" name="option5[]" value="MUNICIÓN (CALIBRE 7.62 mm, 9mm, 5.56mm) ">
+                                                    <label class="text-body" for="check18"> &nbsp;&nbsp;MUNICIÓN (CALIBRE 7.62 mm, 9mm, 5.56mm) </label></br>
                                                     &nbsp; <input type="checkbox" id="check19" name="option5[]" value="MUNICION Y EXPLOSIVOS ">
                                                     <label class="text-body" for="check19"> &nbsp;&nbsp;MUNICION Y EXPLOSIVOS </label></br>
                                                     &nbsp; <input type="checkbox" id="check20" name="option5[]" value="ARMAMENTO MENOR (FUSILES Y AMETRALLADORAS)">
                                                     <label class="text-body" for="check20"> &nbsp;&nbsp;ARMAMENTO MENOR (FUSILES Y AMETRALLADORAS) </label></br>
                                                     &nbsp; <input type="checkbox" id="check21" name="option5[]" value="ARMAMENTO MAYOR (MORTEROS DESDE CAL. 60mm HASTA 120mm, 4.2PULG, OBUSES, FUSILES SIN RETROCESO,COHETES)">
-                                                    <label class="text-body" for="check21"> &nbsp;&nbsp;ARMAMENTO MAYOR (MORTEROS DESDE CAL. 60mm HASTA 120mm, 4.2PULG, OBUSES, FUSILES SIN RETROCESO,COHETES)</label></br>
+                                                    <label class="text-body" for="check21"> &nbsp;&nbsp;ARMAMENTO MAYOR (MORTEROS DESDE CAL. 60mm HASTA 120mm, 4.2PULG</label></br>
+                                                    <label class="text-body" for="check21"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OBUSES, FUSILES SIN RETROCESO,COHETES)</label></br>
                                                     &nbsp; <input type="checkbox" id="check221" name="option5[]" value="LANZADORES INDIVIDUALES, MÚLTIPLES Y COHETES ">
-                                                    <label class="text-body" for="check221"> &nbsp;&nbsp;LANZADORES INDIVIDUALES, MÚLTIPLES Y COHETES </label>
+                                                    <label class="text-body" for="check221"> &nbsp;&nbsp;LANZADORES INDIVIDUALES, MÚLTIPLES Y COHETES </label><br>
+                                                    &nbsp; <input type="checkbox" id="check222" name="option5[]" value="MUNICIÓN CALIBRE MENOR ">
+                                                    <label class="text-body" for="check222"> &nbsp;&nbsp;MUNICIÓN CALIBRE MENOR </label><br>
+                                                    &nbsp; <input type="checkbox" id="check223" name="option5[]" value="MUNICIÓN Y EXPLOSIVOS PARA NEUTRALIZACIÓN DE MINAS TERRESTRES Y UXO'S ">
+                                                    <label class="text-body" for="check223"> &nbsp;&nbsp;MUNICIÓN Y EXPLOSIVOS PARA NEUTRALIZACIÓN DE MINAS TERRESTRES Y UXO'S </label>
                                                     </br><label style="color:#0A307C" for="comment">Especificar el bien a proveer si es necesario</label>
                                                     <textarea class="form-control" rows="5" name="armamento_opt5" onkeyup="javascript:this.value=this.value.toUpperCase();"> </textarea>
                                                 </div></br></br>
@@ -254,8 +261,8 @@ $row = mysqli_fetch_array($result);
                                                     <label class="text-body" for="check23"> &nbsp;&nbsp;CORBETAS </label></br>
                                                     &nbsp; <input type="checkbox" id="check24" name="option6[]" value="BLOQUE MULTIPROPÓSITO">
                                                     <label class="text-body" for="check24"> &nbsp;&nbsp;BLOQUE MULTIPROPÓSITO </label></br>
-                                                    &nbsp; <input type="checkbox" id="check25" name="option6[]" value="LANCHAS MISILARES">
-                                                    <label class="text-body" for="check25"> &nbsp;&nbsp;LANCHAS MISILARES </label></br>
+                                                    &nbsp; <input type="checkbox" id="check25" name="option6[]" value="LANCHA MISILERA">
+                                                    <label class="text-body" for="check25"> &nbsp;&nbsp;LANCHA MISILERA </label></br>
                                                     &nbsp; <input type="checkbox" id="check26" name="option6[]" value="SUBMARINOS">
                                                     <label class="text-body" for="check26"> &nbsp;&nbsp;SUBMARINOS </label>
                                                     </br><label style="color:#0A307C" for="comment">Especificar el bien a proveer si es necesario</label>
@@ -284,9 +291,11 @@ $row = mysqli_fetch_array($result);
                                                 <div class="form-check">
                                                     <font size=5 style="color:#0A307C">SEMOVIENTES</font><br>
                                                     &nbsp; <input type="checkbox" id="check32" name="option9[]" value="ADQUISICIÓN DE ANIMALES">
-                                                    <label class="text-body" for="check32"> &nbsp;&nbsp;ADQUISICIÓN DE ANIMALES </label>
+                                                    <label class="text-body" for="check32"> &nbsp;&nbsp;ADQUISICIÓN DE ANIMALES </label><br>
+                                                    &nbsp; <input type="checkbox" id="check132" name="option9[]" value="CANES DETECTORES DE EXPLOSIVOS">
+                                                    <label class="text-body" for="check132"> &nbsp;&nbsp;CANES DETECTORES DE EXPLOSIVOS </label>
                                                     </br><label style="color:#0A307C" for="comment">Especificar el bien a proveer si es necesario</label>
-                                                    <textarea class="form-control" rows="5" name="armamento_opt9" onkeyup="javascript:this.value=this.value.toUpperCase();"> </textarea>
+                                                    <textarea class="form-control" rows="5" name="semoviente_opt9" onkeyup="javascript:this.value=this.value.toUpperCase();"> </textarea>
                                                 </div></br></br>
                                                 <div class="form-check">
                                                     <font size=5 style="color:#0A307C">ARMAMENTO Y EQUIPO NO LETAL</font><br>
@@ -295,9 +304,68 @@ $row = mysqli_fetch_array($result);
                                                     &nbsp; <input type="checkbox" id="check35" name="option10[]" value="EQUIPO NO LETAL">
                                                     <label class="text-body" for="check35"> &nbsp;&nbsp;EQUIPO NO LETAL </label></br>
                                                     &nbsp; <input type="checkbox" id="check36" name="option10[]" value="MUNICIÓN NO LETAL">
-                                                    <label class="text-body" for="check36"> &nbsp;&nbsp;MUNICIÓN NO LETAL </label>
+                                                    <label class="text-body" for="check36"> &nbsp;&nbsp;MUNICIÓN NO LETAL </label><br>
+                                                    &nbsp; <input type="checkbox" id="check136" name="option10[]" value="CAMPER TIPO DORMITORIO">
+                                                    <label class="text-body" for="check136"> &nbsp;&nbsp;CAMPER TIPO DORMITORIO </label><br>
+                                                    &nbsp; <input type="checkbox" id="check137" name="option10[]" value="CASCOS ANTI FRAGMENTO DE PROTECCIÓN EOD NIVEL1, CON VISOR DE PROTECCIÓN">
+                                                    <label class="text-body" for="check137"> &nbsp;&nbsp;CASCOS ANTI FRAGMENTO DE PROTECCIÓN EOD NIVEL1, CON VISOR DE PROTECCIÓN </label><br>
+                                                    &nbsp; <input type="checkbox" id="check138" name="option10[]" value="CHALECOS DE PROTECCIÓN PARA OPERACIONES DE EOD NIVEL1">
+                                                    <label class="text-body" for="check138"> &nbsp;&nbsp;CHALECOS DE PROTECCIÓN PARA OPERACIONES DE EOD NIVEL1 </label><br>
+                                                    &nbsp; <input type="checkbox" id="check139" name="option10[]" value="DETECTORES DE METALES">
+                                                    <label class="text-body" for="check139"> &nbsp;&nbsp;DETECTORES DE METALES </label><br>
+                                                    &nbsp; <input type="checkbox" id="check140" name="option10[]" value="EQUIPO DE COMUNICACIONES">
+                                                    <label class="text-body" for="check140"> &nbsp;&nbsp;EQUIPO DE COMUNICACIONES </label><br>
+                                                    &nbsp; <input type="checkbox" id="check141" name="option10[]" value="EQUIPO ESPECIAL DE DESMINADO">
+                                                    <label class="text-body" for="check141"> &nbsp;&nbsp;EQUIPO ESPECIAL DE DESMINADO </label><br>
+                                                    &nbsp; <input type="checkbox" id="check142" name="option10[]" value="EQUIPAMIENTO PARA BÚSQUEDA Y RESCATE">
+                                                    <label class="text-body" for="check142"> &nbsp;&nbsp;EQUIPAMIENTO PARA BÚSQUEDA Y RESCATE </label><br>
+                                                    &nbsp; <input type="checkbox" id="check143" name="option10[]" value="GRANADAS DE GAS DE MANO DE 3 TIEMPOS">
+                                                    <label class="text-body" for="check143"> &nbsp;&nbsp;GRANADAS DE GAS DE MANO DE 3 TIEMPOS </label><br>
+                                                    &nbsp; <input type="checkbox" id="check144" name="option10[]" value="GRANADAS DE GAS DE LARGO ALCANCE 37/38MM">
+                                                    <label class="text-body" for="check144"> &nbsp;&nbsp;GRANADAS DE GAS DE LARGO ALCANCE 37/38MM </label><br>
+                                                    &nbsp; <input type="checkbox" id="check145" name="option10[]" value="KIT DE HERRAMIENTAS">
+                                                    <label class="text-body" for="check145"> &nbsp;&nbsp;KIT DE HERRAMIENTAS </label><br>
+                                                    &nbsp; <input type="checkbox" id="check146" name="option10[]" value="PRENDAS DE INTENDENCIA ">
+                                                    <label class="text-body" for="check146"> &nbsp;&nbsp;PRENDAS DE INTENDENCIA </label><br>
+                                                    &nbsp; <input type="checkbox" id="check147" name="option10[]" value="TRAJES DE DESACTIVACIÓN EOD NIVEL 1 ">
+                                                    <label class="text-body" for="check147"> &nbsp;&nbsp;TRAJES DE DESACTIVACIÓN EOD NIVEL1 </label>
                                                     </br><label style="color:#0A307C" for="comment">Especificar el bien a proveer si es necesario</label>
                                                     <textarea class="form-control" rows="5" name="armamento_opt10" onkeyup="javascript:this.value=this.value.toUpperCase();"> </textarea>
+                                                </div></br></br>
+                                                <div class="form-check">
+                                                    <font size=5 style="color:#0A307C">EQUIPOS ESPECIALES, DE SOPORTE EN TIERRA, COMPONENTES MAYORES Y EQUIPOS DE VUELO</font><br>
+                                                    &nbsp; <input type="checkbox" id="check37" name="option11[]" value="PODS PARA VIGILANCIA Y RECONOCIMIENTO DESMONTABLES">
+                                                    <label class="text-body" for="check37"> &nbsp;&nbsp;PODS PARA VIGILANCIA Y RECONOCIMIENTO DESMONTABLES</label></br>
+                                                    &nbsp; <input type="checkbox" id="check38" name="option11[]" value="ESTACIÓN DE CONTROL TERRESTRE MÓVIL PARA EL PROCESAMIENTO DE LA INFORMACIÓN">
+                                                    <label class="text-body" for="check38"> &nbsp;&nbsp;ESTACIÓN DE CONTROL TERRESTRE MÓVIL PARA EL PROCESAMIENTO DE LA INFORMACIÓN </label></br>
+                                                    &nbsp; <input type="checkbox" id="check39" name="option11[]" value="EQUIPOS DE VISIÓN NOCTURNA-NIGHT VISIÓN GOOGLES (NVG)">
+                                                    <label class="text-body" for="check39"> &nbsp;&nbsp;EQUIPOS DE VISIÓN NOCTURNA-NIGHT VISIÓN GOOGLES (NVG)  </label><br>
+                                                    &nbsp; <input type="checkbox" id="check40" name="option11[]" value=" EQUIPOS PARA RELAY DE COMUNICACIONES  ">
+                                                    <label class="text-body" for="check40"> &nbsp;&nbsp;EQUIPOS PARA RELAY DE COMUNICACIONES </label><br>
+                                                    &nbsp; <input type="checkbox" id="check41" name="option11[]" value="CAMIONES TIPO CISTERNA CON CAPACIDAD DE PROVISIÓN DE 5000 GALONES DE COMBUSTIBLE">
+                                                    <label class="text-body" for="check41"> &nbsp;&nbsp;CAMIONES TIPO CISTERNA CON CAPACIDAD DE PROVISIÓN DE 5000 GALONES DE COMBUSTIBLE  </label><br>
+                                                    &nbsp; <input type="checkbox" id="check42" name="option11[]" value="CAMIÓN PARA EL BARRIDO DE PISTA ANTI-FOD">
+                                                    <label class="text-body" for="check42"> &nbsp;&nbsp;CAMIÓN PARA EL BARRIDO DE PISTA ANTI-FOD </label><br>
+                                                    &nbsp; <input type="checkbox" id="check43" name="option11[]" value="VEHÍCULOS TIPO REMOLCADOR">
+                                                    <label class="text-body" for="check43"> &nbsp;&nbsp;VEHÍCULOS TIPO REMOLCADOR </label><br>
+                                                    &nbsp; <input type="checkbox" id="check44" name="option11[]" value="ALFOMBRAS ANTI-FOD REMOLCABLES PARA PISTAS Y PLATAFORMAS AERONÁUTICAS">
+                                                    <label class="text-body" for="check44"> &nbsp;&nbsp;ALFOMBRAS ANTI-FOD REMOLCABLES PARA PISTAS Y PLATAFORMAS AERONÁUTICAS </label><br>
+                                                    &nbsp; <input type="checkbox" id="check45" name="option11[]" value="MOTORES MODELO M250-B17F, N/P23033380">
+                                                    <label class="text-body" for="check45"> &nbsp;&nbsp;MOTORES MODELO M250-B17F, N/P23033380 </label><br>
+                                                    &nbsp; <input type="checkbox" id="check46" name="option11[]" value="CASCO DE VUELO CON CAPACIDAD PARA INSTALAR VISORES NOCTURNOS">
+                                                    <label class="text-body" for="check46"> &nbsp;&nbsp;CASCO DE VUELO CON CAPACIDAD PARA INSTALAR VISORES NOCTURNOS </label><br>
+                                                    &nbsp; <input type="checkbox" id="check47" name="option11[]" value="MÁSCARAS DE OXIGENO PARA CASCO DE VUELO">
+                                                    <label class="text-body" for="check47"> &nbsp;&nbsp;MÁSCARAS DE OXIGENO PARA CASCO DE VUELO </label><br>
+                                                    &nbsp; <input type="checkbox" id="check48" name="option11[]" value="PARACAÍDAS CON CHALECO SALVAVIDAS INTEGRADO">
+                                                    <label class="text-body" for="check48"> &nbsp;&nbsp;PARACAÍDAS CON CHALECO SALVAVIDAS INTEGRADO </label><br>
+                                                    &nbsp; <input type="checkbox" id="check49" name="option11[]" value="DISPOSITIVOS DE VUELO HOMOLOGADOS (SISTEMAS DE GESTIÓN DE INFORMACIÓN DE VUELO)">
+                                                    <label class="text-body" for="check49"> &nbsp;&nbsp;DISPOSITIVOS DE VUELO HOMOLOGADOS (SISTEMAS DE GESTIÓN DE INFORMACIÓN DE VUELO) </label><br>
+                                                    &nbsp; <input type="checkbox" id="check50" name="option11[]" value="VEHÍCULOS REMOLCADORES CON CAPACIDAD DE AL MENOS 5000 LIBRAS DE ARRASTRE ">
+                                                    <label class="text-body" for="check50"> &nbsp;&nbsp; VEHÍCULOS REMOLCADORES CON CAPACIDAD DE AL MENOS 5000 LIBRAS DE ARRASTRE </label><br>
+                                                    &nbsp; <input type="checkbox" id="check51" name="option11[]" value="REMOLCADORES ELÉCTRICOS PARA AERONAVES LIGERAS ">
+                                                    <label class="text-body" for="check51"> &nbsp;&nbsp;REMOLCADORES ELÉCTRICOS PARA AERONAVES LIGERAS  </label>
+                                                    </br><label style="color:#0A307C" for="comment">Especificar el bien a proveer si es necesario</label>
+                                                    <textarea class="form-control" rows="5" name="equipo_opt11" onkeyup="javascript:this.value=this.value.toUpperCase();"> </textarea>
                                                 </div></br></br>
                                             </div>
                                         </div>

@@ -39,7 +39,7 @@ include('conexion/conexion.php');
 	<!-- Custom Theme Style -->
 	<link href="build/css/custom.min.css" rel="stylesheet">
 	<!-- Cargar el captcha -->
-	<script src="js/load_captcha.js"></script>
+	<script src="https://www.google.com/recaptcha/api.js"></script>
 	<!-- Datatables -->
 	<link href="../vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
 	<link href="../vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
@@ -48,7 +48,6 @@ include('conexion/conexion.php');
 	<link href="../vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
 	<!-- Sweetalert2 -->
 	<script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.4.17/dist/sweetalert2.all.min.js"></script>
-	<script src='https://www.google.com/recaptcha/api.js?render=6Lebs4khAAAAADag0NOZim3fdOBwzHs1izzlTaD2'></script>
 	<!--- FORMATO DE BOTONES --->
 	<link href="css/botones.css" rel="stylesheet">
 </head>
@@ -226,13 +225,13 @@ include('conexion/conexion.php');
 												</div>
 											</div>
 											<div class="row">
-												<div class='col-sm-6'>
-													<input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+												<div class='col-sm-6'><br>
+													<div class="g-recaptcha" data-sitekey="6Lc44LMlAAAAAC6aSOeGG7M1Xn4khY1HuF2KpVm1"></div>
 												</div>
 											</div>
 											<div class="form-group row">
-												<div class="col-md-9 col-sm-9  offset-md-3">
-													<input type="submit" name="guardapostulante" onclick="test()" id="guardapostulante" class="boton btn btn-primary" value="REGISTRAR">
+												<div class="col-md-9 col-sm-9  offset-md-3"><br><br>
+													<input type="submit" name="guardapostulante" id="guardapostulante" class="boton btn btn-primary" value="REGISTRAR">
 													<a type="button" href="registro_postulante.php" class="boton btn btn-primary">CANCELAR</a>
 												</div>
 											</div>
