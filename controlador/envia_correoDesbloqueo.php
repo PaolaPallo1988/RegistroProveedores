@@ -47,9 +47,6 @@ if (isset($_POST['desbloquear_cuenta'])) {
             //    SACAR LA IP DE LA MAQUINA 
             $fecha = date("Y-m-d h:i:s");
             echo $fecha;
-
-
-
             // almacenar el token en la tabla de la base de datos de restablecimiento de contraseña contra el correo electrónico del usuario
             $sql = "INSERT INTO desbloqueo_cuenta (usuario_idDesbloqueo, email_desbloqueo, token_desbloqueo) VALUES ('$id','$email', '$token')";
             $query = mysqli_query($conn_registro, $sql);

@@ -311,17 +311,19 @@ if (isset($_POST['login'])) {
         } else {
             echo "<script>          
             Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Usuario o Contraseña Incorrecta! ',
-                footer: '<a href>Intente Nuevamente?</a>'
-                    }
-                ).then(function() {
-                    window.location = 'index.php';
-                });
+                 icon: 'error',
+                 title: 'Oops...',
+                 text: 'Usuario o Contraseña Incorrecta! ',
+                 footer: '<a href>Intente Nuevamente?</a>'
+                     }
+                 ).then(function() {
+                    // window.location = 'index.php';
+               });
                     </script>";
             var_dump($_SESSION['intentos']);
-            if ($_SESSION['intentos'] > 3) {
+            $intentos = $_SESSION['intentos']++;
+
+            if ($intentos > 3) {
                 $sqlactualiza = "UPDATE usuario SET estado_id = '2' WHERE cedula_usuario = '" . $username . "'";
                 $actualiza = mysqli_query($conn_registro, $sqlactualiza);
                 echo "<script>          
